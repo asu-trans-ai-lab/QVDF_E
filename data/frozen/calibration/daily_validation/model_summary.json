@@ -1,0 +1,83 @@
+{
+  "analysis_track": "daily_validation",
+  "detected": 1477,
+  "hard_qc_failed": 350,
+  "outlier_failed_after_hard_qc": 29,
+  "eligible": 1098,
+  "fitted": 1098,
+  "physical": 325,
+  "observed_physical": 323,
+  "matched": 0,
+  "closed": 0,
+  "lower_branch": 0,
+  "legacy_eligible": 1098,
+  "by_corridor": {
+    "AZ_I10_W": {
+      "detected": 1477,
+      "hard_qc_failed": 350,
+      "outlier_failed_after_hard_qc": 29,
+      "eligible": 1098,
+      "fitted": 1098,
+      "physical": 325,
+      "observed_physical": 323,
+      "matched": 0,
+      "closed": 0,
+      "lower_branch": 0,
+      "legacy_eligible": 1098
+    }
+  },
+  "by_paper_corridor": {
+    "AZ_I10": {
+      "detected": 1477,
+      "hard_qc_failed": 350,
+      "outlier_failed_after_hard_qc": 29,
+      "eligible": 1098,
+      "fitted": 1098,
+      "physical": 325,
+      "observed_physical": 323,
+      "matched": 0,
+      "closed": 0,
+      "lower_branch": 0,
+      "legacy_eligible": 1098
+    }
+  },
+  "by_split": {
+    "later_date": {
+      "detected": 242,
+      "hard_qc_failed": 62,
+      "outlier_failed_after_hard_qc": 6,
+      "eligible": 174,
+      "fitted": 174,
+      "physical": 34,
+      "observed_physical": 35,
+      "matched": 0,
+      "closed": 0,
+      "lower_branch": 0,
+      "legacy_eligible": 174
+    },
+    "training": {
+      "detected": 1235,
+      "hard_qc_failed": 288,
+      "outlier_failed_after_hard_qc": 23,
+      "eligible": 924,
+      "fitted": 924,
+      "physical": 291,
+      "observed_physical": 288,
+      "matched": 0,
+      "closed": 0,
+      "lower_branch": 0,
+      "legacy_eligible": 924
+    }
+  },
+  "bootstrap_replicates": 400,
+  "parameter_cards": 4,
+  "supported_parameter_cards": 4,
+  "fallback_parameter_cards": 0,
+  "unavailable_parameter_cards": 0,
+  "outlier_rule": "P versus wt2/Tf; other two relations, duration rule, 3.5 MAD threshold and >=2 votes unchanged",
+  "raw_speed_policy": "flag only; state-transition smoothing retained; no speed imputation or removal",
+  "mean_speed_target": "vq is triangular-FD queue-state speed inferred from D/P; vt2 is minimum observed whole-link speed",
+  "fit_scope": "corridor-direction-period; same corridor-direction all-period fallback if local N<8; unavailable if fallback N<8",
+  "metric_CI_scope": "calendar-date block bootstrap within training or heldout split; predictions fixed; no emission admission filter",
+  "emissions_evaluated": false
+}

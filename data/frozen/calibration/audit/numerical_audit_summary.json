@@ -1,0 +1,392 @@
+{
+  "reference_state": {
+    "reference_sensor_uid": "AZ_I10_W::78",
+    "period": "MD",
+    "calibration_scope": "corridor_all_periods",
+    "N_train": 5,
+    "N_source": 43,
+    "reference_interpretation": "Conditional median reference; not an observed month or episode.",
+    "x_h": 1.5739012349093728,
+    "P_h": 2.015132123355823,
+    "C_vphpl": 1501.6157386990858,
+    "vf_mph": 64.16137486955441,
+    "L_mi": 1.0400000000000205,
+    "Tf_h": 0.01620912896761377,
+    "mu_vphpl": 1172.8237757244683,
+    "omega_mph": 7.638068452895794,
+    "kq_veh_mi_lane": 66.45021408785362,
+    "vq_mph": 17.649661356604234,
+    "peak_delay_h": 0.030413451025677923,
+    "mean_delay_h": 0.013933622968363583,
+    "kj_veh_mi_lane": 220.0,
+    "traffic_parameters": {
+      "fd": 1.2373036267126496,
+      "n": 1.07538813292762,
+      "fp": 0.963141822305749,
+      "s": 0.9517332475469742,
+      "theta": 0.4581401484691591
+    },
+    "cubic_rate_sha256": "c8b0802937793c93c832c63da3894ab91b13d4777a9ce86a275cad94d5fdc089",
+    "rates": [
+      {
+        "pollutant": "CO2",
+        "c0": 8801.633440397325,
+        "c1": -281.9437306321036,
+        "c2": 9.963472283997316,
+        "c3": -0.05132177876849053,
+        "speed_min_mph": 5.0,
+        "speed_max_mph": 75.0
+      },
+      {
+        "pollutant": "NOx",
+        "c0": 7.422341517734551,
+        "c1": -0.5071325265593435,
+        "c2": 0.01804329008046688,
+        "c3": -8.947978376299922e-05,
+        "speed_min_mph": 5.0,
+        "speed_max_mph": 75.0
+      },
+      {
+        "pollutant": "CO",
+        "c0": 58.178423969901566,
+        "c1": 0.06492322686651926,
+        "c2": 0.02017638256474425,
+        "c3": -9.439572458426686e-05,
+        "speed_min_mph": 5.0,
+        "speed_max_mph": 75.0
+      },
+      {
+        "pollutant": "HC",
+        "c0": 2.941868430060413,
+        "c1": -0.0407633863391412,
+        "c2": 0.0019420510837799651,
+        "c3": -1.2368607529741969e-05,
+        "speed_min_mph": 5.0,
+        "speed_max_mph": 75.0
+      }
+    ],
+    "transition_geometry": {
+      "peak_deceleration_mps2": 1.5,
+      "peak_acceleration_mps2": 1.0,
+      "T_down_s": 20.792596408829244,
+      "T_up_s": 31.188894613243868,
+      "distance_down_mi": 0.23625886917203132,
+      "distance_up_mi": 0.354388303758047,
+      "admissible_delay_lower_min": 0.31401917214083835,
+      "admissible_delay_upper_min": 1.4213847757948164,
+      "mean_delay_min": 0.836017378101815,
+      "peak_delay_min": 1.8248070615406753,
+      "peak_free_flow_portion_s": 16.80561833853732,
+      "required_half_transitions_s": 25.990745511036558,
+      "mean_admitted": true,
+      "peak_admitted": false
+    }
+  },
+  "reference_components": [
+    {
+      "pollutant": "CO2",
+      "e0_g_vehicle": 294.55975320703544,
+      "Gamma_g_vehicle_h": 2273.4386168137617,
+      "increment_g_vehicle": 31.677236528400964,
+      "total_g_vehicle": 326.2369897354364,
+      "rounded_input_total_g_vehicle": 326.112099378047,
+      "difference_from_rounded_input_g_vehicle": 0.12489035738940402
+    },
+    {
+      "pollutant": "NOx",
+      "e0_g_vehicle": 0.4137872438343438,
+      "Gamma_g_vehicle_h": -4.72050546905197,
+      "increment_g_vehicle": -0.06577374342586843,
+      "total_g_vehicle": 0.34801350040847534,
+      "rounded_input_total_g_vehicle": 0.34784806181390254,
+      "difference_from_rounded_input_g_vehicle": 0.00016543859457279764
+    },
+    {
+      "pollutant": "CO",
+      "e0_g_vehicle": 1.9527268863067782,
+      "Gamma_g_vehicle_h": 44.075443725804696,
+      "increment_g_vehicle": 0.6141306150386889,
+      "total_g_vehicle": 2.566857501345467,
+      "rounded_input_total_g_vehicle": 2.5662767929588752,
+      "difference_from_rounded_input_g_vehicle": 0.000580708386591855
+    },
+    {
+      "pollutant": "HC",
+      "e0_g_vehicle": 0.0819257280366187,
+      "Gamma_g_vehicle_h": 1.8885277467060713,
+      "increment_g_vehicle": 0.02631403358789564,
+      "total_g_vehicle": 0.10823976162451433,
+      "rounded_input_total_g_vehicle": 0.10820955711178307,
+      "difference_from_rounded_input_g_vehicle": 3.020451273126612e-05
+    }
+  ],
+  "emissions": {
+    "detected": 325,
+    "eligible": 293,
+    "fitted": 286,
+    "stages": [
+      {
+        "stage": "finite_link_admission",
+        "excluded": 149,
+        "remaining": 137
+      },
+      {
+        "stage": "profile_reconstruction",
+        "excluded": 0,
+        "remaining": 137
+      },
+      {
+        "stage": "common_rate_domain",
+        "excluded": 0,
+        "remaining": 137
+      },
+      {
+        "stage": "common_positive_finite_emissions",
+        "excluded": 0,
+        "remaining": 137
+      }
+    ],
+    "retained": 137,
+    "excluded": 149,
+    "excluded_fraction": 0.5209790209790209,
+    "medians": [
+      {
+        "population": "retained",
+        "N": 137,
+        "median_x_h": 2.167419805814274,
+        "median_P_h": 2.5,
+        "median_vt2_mph": 37.80285714285716
+      },
+      {
+        "population": "excluded",
+        "N": 149,
+        "median_x_h": 4.112312216136752,
+        "median_P_h": 4.833333333333333,
+        "median_vt2_mph": 28.60869565217391
+      }
+    ],
+    "physical_failure_reasons": {
+      "queue_exceeds_link": 149
+    },
+    "O_max_abs_error_g": 4.656612873077393e-10,
+    "O_accounting": "sum(q_vphpl/12 * L_mi/v_mph * rate_g_vehicle_hour) within [t0,t3)",
+    "WAPE": "100 sum(abs(predicted_episode_total - O_episode_total)) / sum(O_episode_total)"
+  },
+  "emission_metrics": [
+    {
+      "pollutant": "CO2",
+      "method": "M",
+      "N": 137,
+      "R2": 0.9058642119891284,
+      "RMSE": 125953.90488077157,
+      "MAE": 67183.48292650483,
+      "bias_pct": 20.74809739027451,
+      "WAPE_pct": 22.38166778244673
+    },
+    {
+      "pollutant": "CO2",
+      "method": "S",
+      "N": 137,
+      "R2": 0.9911597589239194,
+      "RMSE": 38598.13397922441,
+      "MAE": 17836.507458322292,
+      "bias_pct": -4.601598414288352,
+      "WAPE_pct": 5.942097178379664
+    },
+    {
+      "pollutant": "NOx",
+      "method": "M",
+      "N": 137,
+      "R2": 0.505119587465116,
+      "RMSE": 229.85244651533515,
+      "MAE": 129.13321710860671,
+      "bias_pct": 46.540208203612046,
+      "WAPE_pct": 47.73402132938469
+    },
+    {
+      "pollutant": "NOx",
+      "method": "S",
+      "N": 137,
+      "R2": 0.9529503360010587,
+      "RMSE": 70.87241985418733,
+      "MAE": 33.61604141467656,
+      "bias_pct": -9.556745924706897,
+      "WAPE_pct": 12.42615086827804
+    },
+    {
+      "pollutant": "CO",
+      "method": "M",
+      "N": 137,
+      "R2": 0.9675942022529104,
+      "RMSE": 659.3108730787044,
+      "MAE": 305.94639350330243,
+      "bias_pct": 2.101481732481231,
+      "WAPE_pct": 11.188178330512038
+    },
+    {
+      "pollutant": "CO",
+      "method": "S",
+      "N": 137,
+      "R2": 0.9924465461307852,
+      "RMSE": 318.31101691516704,
+      "MAE": 167.40159482979794,
+      "bias_pct": -2.8589923177503893,
+      "WAPE_pct": 6.121722417844697
+    },
+    {
+      "pollutant": "HC",
+      "method": "M",
+      "N": 137,
+      "R2": 0.9642465319584512,
+      "RMSE": 29.483985398165135,
+      "MAE": 14.128269431740494,
+      "bias_pct": 4.993803690805104,
+      "WAPE_pct": 12.611576175698987
+    },
+    {
+      "pollutant": "HC",
+      "method": "S",
+      "N": 137,
+      "R2": 0.9963343908861834,
+      "RMSE": 9.440612592238777,
+      "MAE": 4.748254137007058,
+      "bias_pct": -2.510101911030425,
+      "WAPE_pct": 4.23852114653969
+    }
+  ],
+  "testing": {
+    "detected_testing": 242,
+    "measurement_qc_pass": 180,
+    "original_hard_qc_pass": 180,
+    "published_eligible": 174,
+    "restored_residual_exclusions": 6,
+    "excluded_by_measurement_qc": [
+      {
+        "reason": "incomplete_episode",
+        "excluded": 5
+      },
+      {
+        "reason": "invalid_observed_speed_or_flow",
+        "excluded": 56
+      },
+      {
+        "reason": "day_boundary_censored",
+        "excluded": 1
+      },
+      {
+        "reason": "metadata_capacity_flag",
+        "excluded": 0
+      },
+      {
+        "reason": "nonfinite_or_nonpositive_demand_capacity",
+        "excluded": 0
+      }
+    ],
+    "training_last_date": "2016-10-19",
+    "testing_first_date": "2016-10-20",
+    "target_finite_pair_counts": {
+      "P_h": 180,
+      "vt2_obs_mph": 180,
+      "wt2_h": 180
+    },
+    "null_estimator": "median of x/P on original eligible training rows in each original corridor-period source; original all-period fallback if used",
+    "mask_definition": "complete speed/flow rows; raw speeds in (0,90] mph and nonnegative flows; uncensored day boundary; unflagged capacity metadata; finite positive x and capacity. No delay positivity, mean/peak ratio, target magnitude, residual or finite-link screen.",
+    "interpretation": "Fit-residual-independent evaluation conditional on speed-based detection and measurement QC; not independent of observation availability.",
+    "metrics": [
+      {
+        "sample": "Published eligible sample",
+        "target": "P_h",
+        "model": "Null median discharge ratio",
+        "N": 174,
+        "R2": 0.9173973344461261,
+        "RMSE": 0.5296679887147866,
+        "MAE": 0.40483708915874916,
+        "bias_pct": -0.8306879262515215,
+        "WAPE_pct": 8.708147132620462
+      },
+      {
+        "sample": "Published eligible sample",
+        "target": "P_h",
+        "model": "Frozen QVDF",
+        "N": 174,
+        "R2": 0.917853939562056,
+        "RMSE": 0.5282020296093993,
+        "MAE": 0.39316102977223777,
+        "bias_pct": -1.641998535736755,
+        "WAPE_pct": 8.456992172292495,
+        "delta_R2": 0.0004566051159298201,
+        "delta_RMSE": -0.0014659591053872711,
+        "delta_MAE": -0.011676059386511395
+      },
+      {
+        "sample": "Published eligible sample",
+        "target": "vt2_obs_mph",
+        "model": "Frozen QVDF",
+        "N": 174,
+        "R2": 0.6103912502232333,
+        "RMSE": 5.652546340752958,
+        "MAE": 3.782815610944527,
+        "bias_pct": 5.853457433476995,
+        "WAPE_pct": 35.974774666120354
+      },
+      {
+        "sample": "Published eligible sample",
+        "target": "wt2_h",
+        "model": "Frozen QVDF",
+        "N": 174,
+        "R2": 0.04536916675134817,
+        "RMSE": 0.0694008656671172,
+        "MAE": 0.052768846842576295,
+        "bias_pct": -17.528539579976936,
+        "WAPE_pct": 37.13916292056841
+      },
+      {
+        "sample": "Measurement QC only",
+        "target": "P_h",
+        "model": "Null median discharge ratio",
+        "N": 180,
+        "R2": 0.9152330622601199,
+        "RMSE": 0.553207067956442,
+        "MAE": 0.4154370559868622,
+        "bias_pct": -1.347679794508779,
+        "WAPE_pct": 9.11471854679149
+      },
+      {
+        "sample": "Measurement QC only",
+        "target": "P_h",
+        "model": "Frozen QVDF",
+        "N": 180,
+        "R2": 0.9162322994799997,
+        "RMSE": 0.5499367844852722,
+        "MAE": 0.40324350355141103,
+        "bias_pct": -2.1277250926417697,
+        "WAPE_pct": 8.847191139370725,
+        "delta_R2": 0.0009992372198798227,
+        "delta_RMSE": -0.003270283471169866,
+        "delta_MAE": -0.012193552435451172
+      },
+      {
+        "sample": "Measurement QC only",
+        "target": "vt2_obs_mph",
+        "model": "Frozen QVDF",
+        "N": 180,
+        "R2": 0.574052709125543,
+        "RMSE": 6.138671189343228,
+        "MAE": 4.096281893300809,
+        "bias_pct": 8.49830686917657,
+        "WAPE_pct": 38.29712166001701
+      },
+      {
+        "sample": "Measurement QC only",
+        "target": "wt2_h",
+        "model": "Frozen QVDF",
+        "N": 180,
+        "R2": 0.004961747824651086,
+        "RMSE": 0.07156138069972148,
+        "MAE": 0.054302926866761046,
+        "bias_pct": -19.232044703596696,
+        "WAPE_pct": 38.29396757503059
+      }
+    ]
+  }
+}

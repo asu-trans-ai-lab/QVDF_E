@@ -1,0 +1,135 @@
+{
+  "detected_testing": 242,
+  "measurement_qc_pass": 180,
+  "original_hard_qc_pass": 180,
+  "published_eligible": 174,
+  "restored_residual_exclusions": 6,
+  "excluded_by_measurement_qc": [
+    {
+      "reason": "incomplete_episode",
+      "excluded": 5
+    },
+    {
+      "reason": "invalid_observed_speed_or_flow",
+      "excluded": 56
+    },
+    {
+      "reason": "day_boundary_censored",
+      "excluded": 1
+    },
+    {
+      "reason": "metadata_capacity_flag",
+      "excluded": 0
+    },
+    {
+      "reason": "nonfinite_or_nonpositive_demand_capacity",
+      "excluded": 0
+    }
+  ],
+  "training_last_date": "2016-10-19",
+  "testing_first_date": "2016-10-20",
+  "target_finite_pair_counts": {
+    "P_h": 180,
+    "vt2_obs_mph": 180,
+    "wt2_h": 180
+  },
+  "null_estimator": "median of x/P on original eligible training rows in each original corridor-period source; original all-period fallback if used",
+  "mask_definition": "complete speed/flow rows; raw speeds in (0,90] mph and nonnegative flows; uncensored day boundary; unflagged capacity metadata; finite positive x and capacity. No delay positivity, mean/peak ratio, target magnitude, residual or finite-link screen.",
+  "interpretation": "Fit-residual-independent evaluation conditional on speed-based detection and measurement QC; not independent of observation availability.",
+  "metrics": [
+    {
+      "sample": "Published eligible sample",
+      "target": "P_h",
+      "model": "Null median discharge ratio",
+      "N": 174,
+      "R2": 0.9173973344461261,
+      "RMSE": 0.5296679887147866,
+      "MAE": 0.40483708915874916,
+      "bias_pct": -0.8306879262515215,
+      "WAPE_pct": 8.708147132620462
+    },
+    {
+      "sample": "Published eligible sample",
+      "target": "P_h",
+      "model": "Frozen QVDF",
+      "N": 174,
+      "R2": 0.917853939562056,
+      "RMSE": 0.5282020296093993,
+      "MAE": 0.39316102977223777,
+      "bias_pct": -1.641998535736755,
+      "WAPE_pct": 8.456992172292495,
+      "delta_R2": 0.0004566051159298201,
+      "delta_RMSE": -0.0014659591053872711,
+      "delta_MAE": -0.011676059386511395
+    },
+    {
+      "sample": "Published eligible sample",
+      "target": "vt2_obs_mph",
+      "model": "Frozen QVDF",
+      "N": 174,
+      "R2": 0.6103912502232333,
+      "RMSE": 5.652546340752958,
+      "MAE": 3.782815610944527,
+      "bias_pct": 5.853457433476995,
+      "WAPE_pct": 35.974774666120354
+    },
+    {
+      "sample": "Published eligible sample",
+      "target": "wt2_h",
+      "model": "Frozen QVDF",
+      "N": 174,
+      "R2": 0.04536916675134817,
+      "RMSE": 0.0694008656671172,
+      "MAE": 0.052768846842576295,
+      "bias_pct": -17.528539579976936,
+      "WAPE_pct": 37.13916292056841
+    },
+    {
+      "sample": "Measurement QC only",
+      "target": "P_h",
+      "model": "Null median discharge ratio",
+      "N": 180,
+      "R2": 0.9152330622601199,
+      "RMSE": 0.553207067956442,
+      "MAE": 0.4154370559868622,
+      "bias_pct": -1.347679794508779,
+      "WAPE_pct": 9.11471854679149
+    },
+    {
+      "sample": "Measurement QC only",
+      "target": "P_h",
+      "model": "Frozen QVDF",
+      "N": 180,
+      "R2": 0.9162322994799997,
+      "RMSE": 0.5499367844852722,
+      "MAE": 0.40324350355141103,
+      "bias_pct": -2.1277250926417697,
+      "WAPE_pct": 8.847191139370725,
+      "delta_R2": 0.0009992372198798227,
+      "delta_RMSE": -0.003270283471169866,
+      "delta_MAE": -0.012193552435451172
+    },
+    {
+      "sample": "Measurement QC only",
+      "target": "vt2_obs_mph",
+      "model": "Frozen QVDF",
+      "N": 180,
+      "R2": 0.574052709125543,
+      "RMSE": 6.138671189343228,
+      "MAE": 4.096281893300809,
+      "bias_pct": 8.49830686917657,
+      "WAPE_pct": 38.29712166001701
+    },
+    {
+      "sample": "Measurement QC only",
+      "target": "wt2_h",
+      "model": "Frozen QVDF",
+      "N": 180,
+      "R2": 0.004961747824651086,
+      "RMSE": 0.07156138069972148,
+      "MAE": 0.054302926866761046,
+      "bias_pct": -19.232044703596696,
+      "WAPE_pct": 38.29396757503059
+    }
+  ]
+}

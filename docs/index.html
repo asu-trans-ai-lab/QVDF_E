@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QVDFE Lecture</title>
+<meta name="description" content="Interactive walk-through of the paper From Bottleneck Episodes to Travel and Emission Costs: queue states, the two-speed emission identity, demand-dependent response, finite transitions, and the evidence.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<script src="data/qvdfe_data.js"></script>
+<style>
+:root{--accent:#57068c;--accent-rgb:87,6,140;--ink:#212529;--muted:#6c757d;--line:#dee2e6;--red:#d7263d;--green:#2e9e5b;--blue:#4e79a7;--teal:#2a9d8f;--bg:#ffffff;--card:#faf8fc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e9ecef;--muted:#adb5bd;--line:#3a3f44;--bg:#15171a;--card:#1d1a24}}
+:root[data-theme="dark"]{--ink:#e9ecef;--muted:#adb5bd;--line:#3a3f44;--bg:#15171a;--card:#1d1a24}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3","Source Sans Pro",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1.05rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+.navbar{border-bottom:3px solid var(--accent);padding:.6rem 16px;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:center;position:sticky;top:0;background:var(--bg);z-index:5}
+.navbar .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.05rem}
+.navbar a.nav{font-weight:600;color:var(--ink);text-decoration:none;font-size:.95rem}
+.navbar a.nav:hover{text-decoration:underline 2px;text-underline-offset:6px}
+main{max-width:980px;margin:0 auto;padding:1rem 16px 4rem}
+h1{font-size:calc(1.325rem + .9vw);font-weight:600;margin:1.5rem 0 .4rem}
+h2{font-size:1.55rem;font-weight:600;margin:2.4rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--line)}
+h3{font-size:1.2rem;font-weight:600;margin:1.4rem 0 .5rem}
+.lead{font-size:1.25rem;font-weight:300}
+.subtitle{color:var(--muted);margin-bottom:1.2rem}
+.katex-display{overflow-x:auto;overflow-y:hidden}
+.prov{font-size:.85rem;color:var(--muted,#666);margin:.2rem 0 .6rem}
+.part{display:inline-block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-top:2.2rem}
+.pullbox{border:2px dashed var(--accent);border-radius:.6rem;padding:.6rem .9rem .5rem;margin:.8rem 0}
+.pullbox .ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.4rem 1.2rem;margin-bottom:.4rem}
+.pullbox label{display:block;font-size:.9rem;color:var(--muted)}
+.pullbox label b{color:var(--ink)}
+.pullbox input[type=range]{width:100%}
+.pullbox select{width:100%;padding:.25rem;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:.3rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin:.6rem 0}
+.dash-tile{background:rgba(var(--accent-rgb),.05);border:1px solid rgba(var(--accent-rgb),.18);border-radius:.45rem;padding:.35rem .6rem}
+.dash-tile .k{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.dash-tile .v{font-size:1.35rem;font-weight:600}
+.dash-tile .u{font-size:.8rem;color:var(--muted)}
+.dash-tile.bad .v{color:var(--red)}.dash-tile.good .v{color:var(--green)}
+.card-lite{padding:1rem 1.2rem;border-radius:.6rem;border:1px solid rgba(var(--accent-rgb),.18);background:rgba(var(--accent-rgb),.03);margin:.8rem 0}
+.think{border-left:4px solid var(--teal);background:rgba(42,157,143,.07);padding:.6rem 1rem;border-radius:0 .4rem .4rem 0;margin:1rem 0}
+.think b{color:var(--teal)}
+details.reveal{margin:.6rem 0}
+details.reveal summary{cursor:pointer;display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:.4rem;padding:.25rem .8rem;font-weight:600;user-select:none}
+details.reveal[open] summary{background:var(--accent);color:#fff}
+details.reveal .body{padding:.5rem .2rem}
+.plot{width:100%;min-height:300px}
+.row{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:768px){.row{grid-template-columns:1fr 1fr}}
+table.tbl{border-collapse:collapse;width:100%;font-size:.92rem;margin:.6rem 0}
+table.tbl th,table.tbl td{border-bottom:1px solid var(--line);padding:.3rem .5rem;text-align:right}
+table.tbl th:first-child,table.tbl td:first-child{text-align:left}
+.pill{display:inline-block;padding:.05rem .5rem;border-radius:1rem;font-size:.8rem;background:rgba(var(--accent-rgb),.1);color:var(--accent);margin-left:.3rem}
+.eq{overflow-x:auto;padding:.2rem 0}
+footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);margin-top:3rem;padding-top:1rem}
+.small{font-size:.9rem;color:var(--muted)}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="#top">QVDFE · From Bottleneck Episodes to Travel and Emission Costs</a>
+  <a class="nav" href="#puzzle">Puzzle</a><a class="nav" href="#states">States</a><a class="nav" href="#identity">Identity</a><a class="nav" href="#response">Response</a><a class="nav" href="#transitions">Transitions</a><a class="nav" href="#data">Data</a><a class="nav" href="#evidence">Evidence</a><a class="nav" href="#scope">Scope</a><a class="nav" href="https://github.com/asu-trans-ai-lab/QVDF_E/tree/main/teaching">Tutorials</a>
+</nav>
+<main id="top">
+<h1>How a congestion episode becomes an emission cost</h1>
+<p class="subtitle">An interactive reading of Abbasi and Zhou (2026), <em>From Bottleneck Episodes to Travel and Emission Costs: A Cross-Resolution Framework with Empirical Evaluation</em>. Every number here is computed in your browser from the paper's frozen data; nothing is computed beyond the paper's own equations.</p>
+<p class="lead">Vehicle-miles and vehicle-hours tell you how far and how long. They do not tell you how much was emitted, because emission rates are nonlinear in speed and acceleration. A bottleneck episode supplies what is missing: the queued state, its service rate, the delay, and the transitions into and out of the queue.</p>
+
+<span class="part">Part 1 · The missing information</span>
+<p class="prov">Illustration with the archived MOVES-derived CO<sub>2</sub>, NO<sub>x</sub>, CO and HC cubic rates · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/teaching/tutorials/T2_two_speeds_and_emissions.ipynb">Tutorial T2</a></p>
+<h2 id="puzzle">The puzzle: same miles, same hours, different emissions</h2>
+<p>Take one vehicle on a link of length $L$ with free-flow speed $v_f$. It arrives with excess travel time $w$ (its delay). Two descriptions of the same trip are both consistent with the measured travel time $T_f+w$: it moved at one average speed throughout, or it ran at $v_f$ and then crawled through a queue at $v_q$. Predict first: which description emits more CO<sub>2</sub>, and does the answer depend on $v_q$?</p>
+<div class="pullbox">
+  <div class="ctl">
+    <label>Queue speed $v_q$ <b id="p_vq_v"></b> mph<input type="range" id="p_vq" min="5" max="60" step="0.5" value="17.65"></label>
+    <label>Delay $w$ <b id="p_w_v"></b> min<input type="range" id="p_w" min="0" max="6" step="0.05" value="0.84"></label>
+    <label>Link length $L$ <b id="p_L_v"></b> mi<input type="range" id="p_L" min="0.2" max="5" step="0.02" value="1.04"></label>
+    <label>Pollutant<select id="p_pol"><option>CO2</option><option>NOx</option><option>CO</option><option>HC</option></select></label>
+  </div>
+  <div class="tiles">
+    <div class="dash-tile"><div class="k">VMT per vehicle</div><div class="v" id="p_vmt"></div><div class="u">mi</div></div>
+    <div class="dash-tile"><div class="k">VHT per vehicle</div><div class="v" id="p_vht"></div><div class="u">min</div></div>
+    <div class="dash-tile"><div class="k">Average-speed estimate</div><div class="v" id="p_eavg"></div><div class="u" id="p_unit1">g</div></div>
+    <div class="dash-tile"><div class="k">Two-speed estimate</div><div class="v" id="p_e2s"></div><div class="u" id="p_unit2">g</div></div>
+    <div class="dash-tile" id="p_adm_tile"><div class="k">Finite-link condition</div><div class="v" id="p_adm"></div><div class="u" id="p_allow"></div></div>
+  </div>
+  <div id="p_plot" class="plot"></div>
+</div>
+<details class="reveal"><summary>Reveal</summary><div class="body">The two-speed trip spends $T_{\rm queue}=v_f w/(v_f-v_q)$ in the queue and the rest at $v_f$. Because the rate per mile $f(v)=r(v)/v$ is convex at low speeds, the two-speed path emits more than the average-speed path for the same miles and hours, and the gap grows as $v_q$ falls. The gap is the information that VMT and VHT lose. The delay cannot exceed $L(1/v_q-1/v_f)$, or the vehicle would need more than the whole link to be queued: that is the finite-link condition, Eq. (9) of the paper.</div></details>
+<div class="think"><b>Think.</b> The average-speed estimate is also what a planning model would produce from link volume and travel time. Under what assumption would it be exact?</div>
+
+<span class="part">Part 2 · Traffic states and the closed episode</span>
+<p class="prov">Illustration: detector-78 fundamental diagram; Newell queue with adjustable values · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/teaching/tutorials/T1_bottleneck_closed_episode.ipynb">Tutorial T1</a></p>
+<h2 id="states">Watch the queue state follow the service rate</h2>
+<p>On a triangular fundamental diagram with capacity $C$, free-flow speed $v_f$ and jam density $k_j$, a bottleneck serving at rate $\mu$ holds the queue in one congested state. The queued-vehicle speed is $v_q=\mu/(k_j-\mu/\omega)$, Eq. (2). It is not the wave speed and not the whole-link average speed. Slide $\mu$ toward capacity and watch $v_q$ rise toward $v_f$.</p>
+<div class="pullbox">
+  <div class="ctl">
+    <label>Service rate $\mu$ <b id="s_mu_v"></b> veh/h/lane<input type="range" id="s_mu" min="300" max="1500" step="5" value="1172.8"></label>
+    <label>Jam density $k_j$ <b id="s_kj_v"></b> veh/mi/lane<input type="range" id="s_kj" min="150" max="280" step="5" value="220"></label>
+  </div>
+  <div class="tiles">
+    <div class="dash-tile"><div class="k">Queue speed $v_q$</div><div class="v" id="s_vq"></div><div class="u">mph</div></div>
+    <div class="dash-tile"><div class="k">Queued density $k_q$</div><div class="v" id="s_kq"></div><div class="u">veh/mi/lane</div></div>
+    <div class="dash-tile"><div class="k">Wave speed $\omega$</div><div class="v" id="s_om"></div><div class="u">mph</div></div>
+    <div class="dash-tile"><div class="k">Service ratio $\mu/C$</div><div class="v" id="s_th"></div><div class="u">1</div></div>
+  </div>
+  <div id="s_plot" class="plot"></div>
+</div>
+<h2>The closed episode: counting vehicles and delay</h2>
+<p>A closed fluid queue with constant service: arrivals exceed $\mu$ from onset $t_0$, the queue peaks at $t_2$ and clears at $t_3$. With Newell's quadratic arrival peak the queue is $Q(t)=\tfrac{b}{3}(t-t_0)^2(t_3-t)$, total delay is $W_P=\int Q\,dt=D\bar w_P$, and the mean delay is $9/16$ of the peak delay for this model, whatever $P$ and $\mu$ are; other closed profiles give other ratios. The paper's Eq. (4) says the time average of the delay profile equals the vehicle average, which is what the emission calculation needs.</p>
+<div class="pullbox">
+  <div class="ctl">
+    <label>Episode duration $P$ <b id="q_P_v"></b> h<input type="range" id="q_P" min="0.5" max="6" step="0.1" value="2"></label>
+    <label>Peak delay $w_{t_2}$ <b id="q_wp_v"></b> min<input type="range" id="q_wp" min="1" max="30" step="0.5" value="8"></label>
+  </div>
+  <div class="tiles">
+    <div class="dash-tile"><div class="k">Episode demand $D=\mu P$</div><div class="v" id="q_D"></div><div class="u">veh/lane</div></div>
+    <div class="dash-tile"><div class="k">Total delay $W_P$</div><div class="v" id="q_W"></div><div class="u">veh h/lane</div></div>
+    <div class="dash-tile"><div class="k">Mean delay $\bar w_P$</div><div class="v" id="q_wbar"></div><div class="u">min</div></div>
+    <div class="dash-tile good"><div class="k">$\bar w_P / w_{t_2}$</div><div class="v" id="q_theta"></div><div class="u">= 9/16</div></div>
+  </div>
+  <div class="row"><div id="q_plot1" class="plot"></div><div id="q_plot2" class="plot"></div></div>
+</div>
+
+<span class="part">Part 3 · The two-speed emission identity</span>
+<p class="prov">Frozen output: detector-78 reference state of Appendix F (defaults reproduce Table F1) · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/teaching/tutorials/T2_two_speeds_and_emissions.ipynb">Tutorial T2</a></p>
+<h2 id="identity">From delay to emissions: the conversion factor Γ</h2>
+<p>With zero-acceleration rates $r(v)$ in g per vehicle-hour, a vehicle that spends its delay in the queued state emits
+$$e=e_0+\Gamma(v_q)\,w,\qquad e_0=r(v_f)T_f,\qquad \Gamma(v_q)=\frac{v_f r(v_q)-v_q r(v_f)}{v_f-v_q},$$
+Eq. (8). Over a closed episode at a common queue state, $E_P=D[e_0+\Gamma(v_q)\bar w_P]$, Eq. (10), or equivalently $E_P=\frac{r(v_f)}{v_f}{\rm VMT}+\Gamma(v_q)\big({\rm VHT}-{\rm VMT}/v_f\big)$, Eq. (12). Nothing else about the delay profile matters for the total. The tiles reproduce Table F1 of the paper at the detector-78 reference state when the sliders are at their defaults.</p>
+<div class="pullbox">
+  <div class="ctl">
+    <label>Queue speed $v_q$ <b id="g_vq_v"></b> mph<input type="range" id="g_vq" min="5" max="60" step="any" value="17.65"></label>
+    <label>Mean delay $\bar w_P$ <b id="g_w_v"></b> min<input type="range" id="g_w" min="0" max="5" step="any" value="0.836"></label>
+  </div>
+  <div id="g_tiles" class="tiles"></div>
+  <div class="row"><div id="g_plot1" class="plot"></div><div id="g_plot2" class="plot"></div></div>
+</div>
+<details class="reveal"><summary>Can you read it? Why is Γ negative for NO<sub>x</sub>?</summary><div class="body">$\Gamma$ is the slope of the chord of emission-per-mile $f(v)=r(v)/v$ between pace $1/v_f$ and pace $1/v_q$. For NO<sub>x</sub> the rate per mile is high at 64 mph and lower at 18 mph, so slowing from free flow to the queue reduces the per-mile emission: a negative increment relative to the free-flow baseline, while the total trip emission stays positive on the admitted domain (Fig. 11 of the paper).</div></details>
+
+<span class="part">Part 4 · Demand changes the state</span>
+<p class="prov">Frozen output: calibrated average-weekday QVDF cards · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/teaching/tutorials/T3_demand_dependent_response.ipynb">Tutorial T3</a></p>
+<h2 id="response">Loading changes the queue speed, and with it Γ</h2>
+<p>A calibrated queueing-based volume-delay function ties cumulative episode demand $x=D/C$ (hours of capacity) to duration $P(x)=\max\{f_d x^n, x\}$ and peak delay $w_{t_2}=T_f f_p P^s$, Eqs. (13)-(14). Because $\mu=Cx/P(x)$ changes with loading, so does $v_q$ and so does $\Gamma$. The emission increment $\Delta e=T_f\alpha x^\beta\Gamma(x)$ has loading elasticity $\beta+\varepsilon_{\Gamma,x}$, Eq. (19): the delay elasticity $\beta=ns$ plus a pollutant term. Pick a calibrated card and move the loading.</p>
+<div class="pullbox">
+  <div class="ctl">
+    <label>Calibrated card<select id="r_card"></select></label>
+    <label>Loading $x=D/C$ <b id="r_x_v"></b> h<input type="range" id="r_x" min="0.3" max="4" step="0.01" value="1.574"></label>
+    <label>Pollutant<select id="r_pol"><option>CO2</option><option>NOx</option><option>CO</option><option>HC</option></select></label>
+  </div>
+  <div id="r_tiles" class="tiles"></div>
+  <div class="row"><div id="r_plot1" class="plot"></div><div id="r_plot2" class="plot"></div></div>
+  <div class="small" id="r_note"></div>
+</div>
+<div class="think"><b>Think.</b> With $n=1$ the service rate is fixed and $\Gamma$ is constant, so emissions are a fixed multiple of delay. Which calibrated cards have $n$ far from 1, and what happens to the elasticity there?</div>
+
+<span class="part">Part 5 · Finite transitions</span>
+<p class="prov">Illustration at the Appendix F reference state; transition kernel of Eq. (22) · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/teaching/tutorials/T4_finite_transitions.ipynb">Tutorial T4</a></p>
+<h2 id="transitions">Replace the instantaneous switch by a real deceleration</h2>
+<p>The two-speed path switches speed instantly. A finite transition of duration $T$ with the symmetric kernel $h(\xi)=3\xi^2-2\xi^3$ covers the same time and distance as half a transition at each speed, Eq. (22), so replacing the switch changes only the emission. For a cubic rate the speed-only change is exact and closed-form,
+$$\delta e=-\tfrac{9}{140}\,T\,(\Delta v)^2\,r''(\bar v),$$
+Eq. (23). A vehicle must also reach $v_q$ and return to $v_f$ inside the link, which bounds the delays that admit the common correction, Eq. (26). Choose peak magnitudes and a link length; the band can be empty.</p>
+<div class="pullbox">
+  <div class="ctl">
+    <label>Peak deceleration $a_\downarrow$ <b id="t_ad_v"></b> m/s²<input type="range" id="t_ad" min="0.5" max="3.5" step="0.05" value="1.5"></label>
+    <label>Peak acceleration $a_\uparrow$ <b id="t_au_v"></b> m/s²<input type="range" id="t_au" min="0.3" max="3" step="0.05" value="1.0"></label>
+    <label>Queue speed $v_q$ <b id="t_vq_v"></b> mph<input type="range" id="t_vq" min="5" max="55" step="0.05" value="17.65"></label>
+    <label>Link length $L$ <b id="t_L_v"></b> mi<input type="range" id="t_L" min="0.1" max="5" step="0.01" value="1.04"></label>
+  </div>
+  <div id="t_tiles" class="tiles"></div>
+  <div class="row"><div id="t_plot1" class="plot"></div><div id="t_plot2" class="plot"></div></div>
+</div>
+<details class="reveal"><summary>Your turn: find a link that admits the peak-delay vehicle</summary><div class="body">At the reference state (1.04 mi, 1.5 and 1.0 m/s²) the band is 0.31 to 1.42 min: the mean-delay vehicle (0.84 min) is admitted, the peak-delay vehicle (1.82 min) is not. Lengthening $L$ widens the band only when the delay is held fixed; in the calibrated model the delay itself scales with $T_f=L/v_f$, so the paper checks the corridor with its own observed delay instead (Section 6.4).</div></details>
+
+<span class="part">Part 6 · The data</span>
+<p class="prov">Observed data: detector 78, November 2016 (legacy ADOT loop-detector data, research use) · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/examples/02_weekdays_vs_average/">Example 2</a></p>
+<h2 id="data">Individual weekdays and the average weekday</h2>
+<p>Detector 78 on Arizona I-10 westbound, November 2016: twelve complete weekdays form the monthly average-weekday profile. The average preserves the mean vehicle-hours of those days (flow-weighted harmonic mean speed) and identifies one episode on the smoothed profile, which is not the average of the daily episode metrics. Select a day to compare it with the profile. These records are legacy ADOT loop-detector data processed for Zhou et al. (2022), used for research purposes.</p>
+<div class="pullbox">
+  <div class="ctl"><label>Highlighted weekday<select id="d_day"></select></label></div>
+  <div id="d_tiles" class="tiles"></div>
+  <div class="row"><div id="d_plot1" class="plot"></div><div id="d_plot2" class="plot"></div></div>
+</div>
+
+<span class="part">Part 7 · Evidence</span>
+<p class="prov">Frozen output: the 137 two-speed-admitted average-weekday episodes · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/reproduce/README.md">Reproduction</a></p>
+<h2 id="evidence">Does the two-speed closure reproduce the recorded-speed calculation?</h2>
+<p>On the 137 average-weekday episodes that satisfy the finite-link, reconstruction and common rate-domain conditions, the recorded-speed calculation $O$ (five-minute speeds, the same rates) is compared with the two-speed closure $M$ and the single episode-speed calculation $S$. $S$ is given the observed travel time; $M$ supplies the queue state that links $v_q$, $\Gamma$ and the marginal-emission expressions. Neither is a tailpipe measurement.</p>
+<div class="pullbox">
+  <div class="ctl"><label>Pollutant<select id="e_pol"><option>CO2</option><option>NOx</option><option>CO</option><option>HC</option></select></label></div>
+  <div id="e_tiles" class="tiles"></div>
+  <div class="row"><div id="e_plot1" class="plot"></div><div id="e_plot2" class="plot"></div></div>
+</div>
+<div class="think"><b>Think.</b> For CO<sub>2</sub> and NO<sub>x</sub> the bias of $M$ nearly equals its WAPE. What does that say about the direction of its discrepancies, and which assumption of the two-speed closure is the likely cause?</div>
+
+<span class="part">Part 8 · Where it applies</span>
+<p class="prov">Frozen output: the three applicability calculations · <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/examples/03_long_episode_applicability/">Example 3</a></p>
+<h2 id="scope">Applicability, counted</h2>
+<div id="sc_tiles" class="tiles"></div>
+<p>The two-speed baseline needs a link that can hold the queue (finite-link condition); the common finite-transition correction additionally needs room for both transitions. On the short PeMS links the band of Eq. (26) is empty at the illustrative magnitudes, so the correction applies to a minority of the two-speed-admitted cohorts. The corridor representation, with its own observed delay, admits more of the long Arizona episodes than the single link. These are applicability conditions, not failures of the baseline.</p>
+<div class="row"><div id="sc_plot1" class="plot"></div><div id="sc_plot2" class="plot"></div></div>
+
+<h2>Further reading</h2>
+<ul>
+<li>Abbasi, M., Zhou, X. (2026). From Bottleneck Episodes to Travel and Emission Costs: A Cross-Resolution Framework with Empirical Evaluation. Manuscript. Code and data: <a href="https://github.com/asu-trans-ai-lab/QVDF_E">asu-trans-ai-lab/QVDF_E</a>.</li>
+<li>Zhou, X., Cheng, Q., Wu, X., Li, P., Belezamo, B., Lu, J., Abbasi, M. (2022). A meso-to-macro cross-resolution performance approach for connecting polynomial arrival queue model to volume-delay function with inflow demand-to-capacity ratio. <em>Multimodal Transportation</em> 1, 100017.</li>
+<li>Newell, G.F. (1982). <em>Applications of Queueing Theory</em>, 2nd ed. Chapman and Hall.</li>
+<li>Vickrey, W.S. (1969). Congestion theory and transport investment. <em>American Economic Review</em> 59, 251-260; Small, K.A. (2015). The bottleneck model: an assessment and interpretation. <em>Economics of Transportation</em> 4, 110-117.</li>
+<li>Step-by-step tutorials: <a href="https://github.com/asu-trans-ai-lab/QVDF_E/tree/main/teaching">teaching/</a>; runnable examples: <a href="https://github.com/asu-trans-ai-lab/QVDF_E/tree/main/examples">examples/</a>; paper reproduction: <a href="https://github.com/asu-trans-ai-lab/QVDF_E/blob/main/reproduce/README.md">reproduce/</a>.</li>
+</ul>
+<footer>Built from the frozen data of the QVDFE release. Emission rates are archived MOVES-derived passenger-car rates at zero acceleration; the original MOVES version and settings are not recorded. Arizona records: legacy ADOT loop-detector data processed for Zhou et al. (2022), research use. Style after the TR-GY 7353 lecture pages.</footer>
+</main>
+<script>
+(function(){
+const DATA = window.QVDFE_DATA;
+const R = DATA.rates, REF = DATA.reference_state;
+const POLS = ['CO2','NOx','CO','HC'];
+const UNIT = {CO2:'g', NOx:'g', CO:'g', HC:'g'};
+const PL = {CO2:'CO₂', NOx:'NOₓ', CO:'CO', HC:'HC'};
+const col = {red:'#d7263d', green:'#2e9e5b', blue:'#4e79a7', grey:'#8a8f94', accent:'#57068c', light:'#c9c9c9', teal:'#2a9d8f'};
+const base = {margin:{l:55,r:15,t:40,b:45}, paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{family:'Source Sans 3, Source Sans Pro, Arial', size:13, color:getComputedStyle(document.body).color}, legend:{orientation:'h', y:-0.25}};
+const cfg = {displayModeBar:false, responsive:true};
+const fmt = (x,d=2)=> (x===null||x===undefined||!isFinite(x)) ? '–' : Number(x).toFixed(d);
+const el = id => document.getElementById(id);
+const rate = (p,v)=>{const c=R[p]; return c.c0 + c.c1*v + c.c2*v*v + c.c3*v*v*v;};
+const r2 = (p,v)=>{const c=R[p]; return 2*c.c2 + 6*c.c3*v;};
+const Gamma = (p,vf,vq)=> (vf*rate(p,vq) - vq*rate(p,vf))/(vf-vq);
+const scale = p => p==='CO2' ? 1 : 1;   // all in grams per vehicle
+function tile(k,v,u,cls){return `<div class="dash-tile ${cls||''}"><div class="k">${k}</div><div class="v">${v}</div><div class="u">${u||''}</div></div>`;}
+function bind(id,fn){el(id).addEventListener('input',fn);}
+
+// ---------- Part 1: puzzle ----------
+function puzzle(){
+  const vf=REF.vf_mph, vq=+el('p_vq').value, w=+el('p_w').value/60, L=+el('p_L').value, p=el('p_pol').value;
+  el('p_vq_v').textContent=fmt(vq,1); el('p_w_v').textContent=fmt(w*60,2); el('p_L_v').textContent=fmt(L,2);
+  const Tf=L/vf, T=Tf+w, vbar=L/T;
+  const eavg = rate(p,vbar)*T, e2s = rate(p,vf)*Tf + Gamma(p,vf,vq)*w;
+  const allow = L*(1/vq-1/vf);
+  const ok = w<=allow && vq<vf;
+  el('p_vmt').textContent=fmt(L,2); el('p_vht').textContent=fmt(T*60,2);
+  el('p_eavg').textContent=fmt(eavg, p==='CO2'?1:3); el('p_e2s').textContent=fmt(e2s, p==='CO2'?1:3);
+  el('p_unit1').textContent=UNIT[p]; el('p_unit2').textContent=UNIT[p];
+  el('p_adm').textContent= ok?'admitted':'not admitted'; el('p_allow').textContent=`delay allowance ${fmt(allow*60,2)} min`;
+  el('p_adm_tile').className='dash-tile '+(ok?'good':'bad');
+  const vs=[], f=[]; for(let v=5; v<=75; v+=1){vs.push(v); f.push(rate(p,v)/v);}
+  Plotly.react('p_plot',[
+    {x:vs,y:f,mode:'lines',name:'emission per mile f(v)=r(v)/v',line:{color:col.grey}},
+    {x:[vq,vf],y:[rate(p,vq)/vq, rate(p,vf)/vf],mode:'lines+markers',name:'two speeds (chord slope is Γ in pace)',line:{color:col.accent},marker:{size:9}},
+    {x:[vbar],y:[rate(p,vbar)/vbar],mode:'markers',name:'one average speed',marker:{color:col.red,size:11,symbol:'diamond'}}
+  ],{...base,title:`${PL[p]} per mile versus speed`,xaxis:{title:'speed (mph)'},yaxis:{title:`g per mile`}},cfg);
+}
+['p_vq','p_w','p_L','p_pol'].forEach(id=>bind(id,puzzle));
+
+// ---------- Part 2: states ----------
+function states(){
+  const C=REF.C_vphpl, vf=REF.vf_mph, kj=+el('s_kj').value, mu=Math.min(+el('s_mu').value, C-1);
+  const kc=C/vf, om=C/(kj-kc), kq=kj-mu/om, vq=mu/kq;
+  el('s_mu_v').textContent=fmt(mu,0); el('s_kj_v').textContent=kj;
+  el('s_vq').textContent=fmt(vq,1); el('s_kq').textContent=fmt(kq,1); el('s_om').textContent=fmt(om,2); el('s_th').textContent=fmt(mu/C,3);
+  Plotly.react('s_plot',[
+    {x:[0,kc,kj],y:[0,C,0],mode:'lines',name:'triangular FD',line:{color:col.grey}},
+    {x:[0,kq],y:[0,mu],mode:'lines',name:`origin ray: slope v_q = ${fmt(vq,1)} mph`,line:{color:col.accent,dash:'dot'}},
+    {x:[kq],y:[mu],mode:'markers',name:'queued state (k_q, μ)',marker:{color:col.red,size:11}}
+  ],{...base,title:'Queued state on the fundamental diagram',xaxis:{title:'density k (veh/mi/lane)',range:[0,kj*1.05]},yaxis:{title:'flow q (veh/h/lane)',range:[0,C*1.15]}},cfg);
+}
+['s_mu','s_kj'].forEach(id=>bind(id,states));
+
+// ---------- Part 2b: closed episode ----------
+function episode(){
+  const P=+el('q_P').value, wp=+el('q_wp').value/60, mu=1800;
+  el('q_P_v').textContent=fmt(P,1); el('q_wp_v').textContent=fmt(wp*60,1);
+  const Qmax=mu*wp, b=81*Qmax/(4*Math.pow(P,3)), D=mu*P, W=b*Math.pow(P,4)/36, wbar=W/D;
+  el('q_D').textContent=fmt(D,0); el('q_W').textContent=fmt(W,1); el('q_wbar').textContent=fmt(wbar*60,2); el('q_theta').textContent=fmt(wbar/wp,4);
+  const t=[],lam=[],Q=[],w=[]; const n=200;
+  for(let i=0;i<=n;i++){const tt=P*i/n; const q=(b/3)*tt*tt*(P-tt); t.push(tt); Q.push(q); w.push(q/mu*60); lam.push(mu+(b/3)*(2*tt*(P-tt)-tt*tt));}
+  Plotly.react('q_plot1',[{x:t,y:lam,mode:'lines',name:'arrival rate λ(t)',line:{color:col.blue}},{x:[0,P],y:[mu,mu],mode:'lines',name:'service μ',line:{color:col.grey,dash:'dash'}}],{...base,title:'Arrivals and service',xaxis:{title:'time from onset (h)'},yaxis:{title:'veh/h/lane'}},cfg);
+  Plotly.react('q_plot2',[{x:t,y:w,mode:'lines',name:'delay w(t)',line:{color:col.red}},{x:[0,P],y:[wbar*60,wbar*60],mode:'lines',name:'mean delay',line:{color:col.grey,dash:'dash'}}],{...base,title:'Delay profile; shaded area ÷ P = mean delay',xaxis:{title:'time from onset (h)'},yaxis:{title:'min'}},cfg);
+}
+['q_P','q_wp'].forEach(id=>bind(id,episode));
+
+// ---------- Part 3: identity ----------
+function identity(){
+  const vf=REF.vf_mph, L=REF.L_mi, Tf=L/vf, vq=+el('g_vq').value, w=+el('g_w').value/60;
+  el('g_vq_v').textContent=fmt(vq,2); el('g_w_v').textContent=fmt(w*60,3);
+  let html='';
+  POLS.forEach(p=>{const e0=rate(p,vf)*Tf, G=Gamma(p,vf,vq), inc=G*w; const d=p==='CO2'?1:4; html+=tile(`${PL[p]}: e₀ | Γw̄ | total (g/veh)`, `${fmt(e0,d)} | ${fmt(inc,d)} | ${fmt(e0+inc,d)}`, `Γ = ${fmt(G, p==='CO2'?0:3)} g/(veh h)`, inc<0?'bad':'');});
+  el('g_tiles').innerHTML=html;
+  const vs=[]; for(let v=5;v<=75;v+=1) vs.push(v);
+  Plotly.react('g_plot1',POLS.map(p=>({x:vs,y:vs.map(v=>rate(p,v)/rate(p,vf)),mode:'lines',name:`${PL[p]} r(v)/r(v_f)`})),{...base,title:'Cubic zero-acceleration rates, relative to free flow',xaxis:{title:'speed (mph)'},yaxis:{title:'r(v)/r(v_f)'}},cfg);
+  const vqs=[]; for(let v=5;v<=60;v+=0.5) vqs.push(v);
+  Plotly.react('g_plot2',POLS.map(p=>({x:vqs,y:vqs.map(v=>Gamma(p,vf,v)/Math.abs(Gamma(p,vf,REF.vq_mph))),mode:'lines',name:`${PL[p]} Γ, scaled`})).concat([{x:[vq,vq],y:[-3,3],mode:'lines',name:'current v_q',line:{color:col.grey,dash:'dot'}}]),{...base,title:'Conversion factor Γ(v_q), scaled by |Γ| at the reference state',xaxis:{title:'queue speed v_q (mph)'},yaxis:{title:'Γ / |Γ_ref|',range:[-3,3]}},cfg);
+}
+['g_vq','g_w'].forEach(id=>bind(id,identity));
+
+// ---------- Part 4: response ----------
+const cards = DATA.cards.filter(c=>c.C && c.vf && c.L && c.n!=null && c.fd!=null);   // cards with a supported fit
+cards.forEach((c,i)=>{const o=document.createElement('option'); o.value=i; o.textContent=`${c.corridor.replace('_',' ')} ${c.period} (${c.scope==='corridor_all_periods'?'corridor fallback':'period'}; n=${c.n}, s=${c.s}, β=${c.beta}, N=${c.N_source})`; el('r_card').appendChild(o);});
+el('r_card').value = Math.max(0, cards.findIndex(c=>c.corridor==='AZ_I10_W' && c.period==='MD'));
+function model(c,x){
+  const Tf=c.L/c.vf, P=Math.max(c.fd*Math.pow(x,c.n), x), mu=c.C*x/P, kc=c.C/c.vf, om=c.omega||(c.C/(c.kj-kc)), kq=c.kj-mu/om, vq=mu/kq;
+  const wt2=Tf*c.fp*Math.pow(P,c.s), wbar=c.theta*wt2;
+  return {P,mu,vq,wt2,wbar,Tf,om,admissible:(P>x+1e-9)&&(vq>0)&&(vq<c.vf)&&(wt2<=c.L*(1/vq-1/c.vf))};
+}
+function response(){
+  const c=cards[+el('r_card').value], x=+el('r_x').value, p=el('r_pol').value; el('r_x_v').textContent=fmt(x,2);
+  const m=model(c,x), G=Gamma(p,c.vf,m.vq), e0=rate(p,c.vf)*m.Tf, inc=G*m.wbar;
+  const h=1e-4, mp=model(c,x+h), mm=model(c,x-h), Gp=Gamma(p,c.vf,mp.vq), Gm=Gamma(p,c.vf,mm.vq);
+  const dG=(Gp-Gm)/(2*h), epsG=x*dG/G, beta=c.n*c.s;
+  const e=xx=>{const mm2=model(c,xx); return rate(p,c.vf)*mm2.Tf+Gamma(p,c.vf,mm2.vq)*mm2.wbar;};
+  const de=(e(x+h)-e(x-h))/(2*h), marg=e(x)+x*de;
+  const d=p==='CO2'?1:4;
+  el('r_tiles').innerHTML = tile('Duration P(x)',fmt(m.P,2),'h')+tile('Service μ',fmt(m.mu,0),'veh/h/lane')+tile('Queue speed v_q',fmt(m.vq,1),'mph')+tile('Mean delay',fmt(m.wbar*60,2),'min')
+    +tile(`${PL[p]} per vehicle e₀ + Γw̄`,`${fmt(e0,d)} + ${fmt(inc,d)}`,'g')+tile('Delay elasticity β=ns',fmt(beta,3),'')+tile('Increment elasticity β+ε_Γ',fmt(beta+epsG,3),`ε_Γ = ${fmt(epsG,3)}`, Math.abs(epsG)>0.2?'bad':'')+tile('Marginal emission dE/dD',fmt(marg,d),'g per added vehicle', '')+tile('Two-speed admissible?',m.admissible?'yes':'no','',m.admissible?'good':'bad');
+  const xs=[]; for(let xx=Math.max(0.3,c.x_min*0.8); xx<=Math.max(c.x_max*1.2,1.0); xx+=0.02) xs.push(+xx.toFixed(3));
+  const ms=xs.map(xx=>model(c,xx));
+  Plotly.react('r_plot1',[{x:xs,y:ms.map(z=>z.vq),mode:'lines',name:'v_q(x) (mph)',line:{color:col.blue}},{x:xs,y:ms.map(z=>z.wbar*60),mode:'lines',name:'mean delay (min)',yaxis:'y2',line:{color:col.red}},{x:[x],y:[m.vq],mode:'markers',name:'current',marker:{color:col.accent,size:10}}],
+    {...base,title:'Queue speed and mean delay versus loading',xaxis:{title:'x = D/C (h)'},yaxis:{title:'v_q (mph)'},yaxis2:{title:'mean delay (min)',overlaying:'y',side:'right'}},cfg);
+  const inc_x = ms.map(z=>Gamma(p,c.vf,z.vq)*z.wbar);
+  Plotly.react('r_plot2',[{x:xs,y:inc_x,mode:'lines',name:`${PL[p]} increment Γ(x)·w̄(x) (g/veh)`,line:{color:col.accent}},{x:xs,y:ms.map(z=>Gamma(p,c.vf,z.vq)),mode:'lines',name:'Γ(x) (g/veh h)',yaxis:'y2',line:{color:col.grey,dash:'dot'}},{x:[x],y:[inc],mode:'markers',name:'current',marker:{color:col.red,size:10}}],
+    {...base,title:'Emission increment and conversion factor versus loading',xaxis:{title:'x = D/C (h)'},yaxis:{title:'g per vehicle'},yaxis2:{title:'Γ',overlaying:'y',side:'right'}},cfg);
+  el('r_note').textContent=`Card calibrated on ${c.N_source} episodes over x in [${c.x_min}, ${c.x_max}] h; detector ${c.sensor}: C = ${c.C} veh/h/lane, v_f = ${c.vf} mph, L = ${c.L} mi, k_j = ${c.kj}. Outside the calibrated range the curves are extrapolations.`;
+}
+['r_card','r_x','r_pol'].forEach(id=>bind(id,response));
+
+// ---------- Part 5: transitions ----------
+function transitions(){
+  const vf=REF.vf_mph, L=+el('t_L').value, vq=+el('t_vq').value, ad=+el('t_ad').value, au=+el('t_au').value;
+  el('t_ad_v').textContent=fmt(ad,2); el('t_au_v').textContent=fmt(au,2); el('t_vq_v').textContent=fmt(vq,2); el('t_L_v').textContent=fmt(L,2);
+  const dv=vf-vq, dvms=dv*0.44704, Td=3*dvms/(2*ad), Tu=3*dvms/(2*au), Th=(Td+Tu)/3600;
+  const wlo=dv*Th/(2*vf), whi=L*(1/vq-1/vf)-dv*Th/(2*vq), vbar=(vf+vq)/2;
+  let html = tile('T↓',fmt(Td,1),'s')+tile('T↑',fmt(Tu,1),'s')+tile('Band lower bound w_lo',fmt(wlo*60,2),'min')+tile('Band upper bound w_hi',fmt(whi*60,2),'min', whi<wlo?'bad':'good')+tile('Band',whi<wlo?'empty':'non-empty','', whi<wlo?'bad':'good');
+  POLS.forEach(p=>{const de=-(9/140)*Th*dv*dv*r2(p,vbar); html+=tile(`δe_tr ${PL[p]} (both transitions)`,fmt(de, p==='CO2'?2:4),'g/veh', de<0?'':'bad');});
+  el('t_tiles').innerHTML=html;
+  const t=[],v=[],a=[]; const T=Td+Tu; const n=240;
+  for(let i=0;i<=n;i++){const tt=T*i/n; let vv, aa; if(tt<=Td){const xi=tt/Td; vv=vf-dv*(3*xi*xi-2*xi*xi*xi); aa=-6*dvms/Td*xi*(1-xi);} else {const xi=(tt-Td)/Tu; vv=vq+dv*(3*xi*xi-2*xi*xi*xi); aa=6*dvms/Tu*xi*(1-xi);} t.push(tt); v.push(vv); a.push(aa);}
+  Plotly.react('t_plot1',[{x:t,y:v,mode:'lines',name:'KS1 speed',line:{color:col.accent}},{x:[0,Td/2,Td/2,Td+Tu/2,Td+Tu/2,T],y:[vf,vf,vq,vq,vf,vf],mode:'lines',name:'two-speed path (same time and distance)',line:{color:col.grey,dash:'dash'}}],{...base,title:'Deceleration then acceleration (queue dwell omitted)',xaxis:{title:'time (s)'},yaxis:{title:'speed (mph)'}},cfg);
+  Plotly.react('t_plot2',[{x:t,y:a,mode:'lines',name:'acceleration',line:{color:col.red}}],{...base,title:'Acceleration along the kernel; mean magnitude is 2/3 of the peak',xaxis:{title:'time (s)'},yaxis:{title:'m/s²'}},cfg);
+}
+['t_ad','t_au','t_vq','t_L'].forEach(id=>bind(id,transitions));
+
+// ---------- Part 6: data ----------
+const F7=DATA.fig7;
+F7.dates.forEach(d=>{const o=document.createElement('option'); o.value=d; o.textContent=d; el('d_day').appendChild(o);});
+el('d_day').value=F7.representative_date;
+function hh(s){const [H,M]=s.slice(11,16).split(':'); return (+H)+(+M)/60;}
+function dataPart(){
+  const d=el('d_day').value, day=F7.days[d], avg=F7.average;
+  const eps=DATA.episodes.filter(e=>e.sensor==='78' && e.corridor==='AZ_I10_W');
+  const dayEp=null; const ae=F7.average_profile_episode; const rep=F7.representative_episodes;
+  const rows = DATA.fig7.representative_date===d ? rep : [];
+  el('d_tiles').innerHTML = tile('Days in the profile',F7.dates.length,'complete weekdays')+tile('Averaged-profile episode',`${ae.t0.slice(11,16)}–${ae.t3.slice(11,16)}`,`P = ${fmt(ae.P_h,2)} h, D = ${fmt(ae.D_veh,0)} veh/lane`)+ (rows.length?tile('Highlighted day episode',`${rows[0].t0.slice(11,16)}–${rows[0].t3.slice(11,16)}`,`P = ${fmt(rows[0].P_h,2)} h, D = ${fmt(rows[0].D_veh,0)} veh/lane`):tile('Highlighted day','see the curve','daily episode boundaries are in data/calibration'));
+  const traces=[], ftr=[];
+  F7.dates.forEach(x=>{if(x===d) return; const g=F7.days[x]; traces.push({x:g.h,y:g.speed,mode:'lines',line:{color:col.light,width:1},showlegend:false,hoverinfo:'skip'}); ftr.push({x:g.h,y:g.flow,mode:'lines',line:{color:col.light,width:1,shape:'hv'},showlegend:false,hoverinfo:'skip'});});
+  traces.push({x:day.h,y:day.speed,mode:'lines',name:d,line:{color:col.blue,width:2}}); traces.push({x:avg.h,y:avg.speed,mode:'lines',name:'average weekday',line:{color:'#222',width:2}});
+  traces.push({x:[6,21],y:[0.7*F7.vf_monthly,0.7*F7.vf_monthly],mode:'lines',name:'detection threshold 0.7 v_f',line:{color:col.grey,dash:'dot'}});
+  ftr.push({x:day.h,y:day.flow,mode:'lines',name:d,line:{color:col.blue,width:2,shape:'hv'}}); ftr.push({x:avg.h,y:avg.flow,mode:'lines',name:'average weekday',line:{color:'#222',width:2,shape:'hv'}});
+  const shapes=[{type:'rect',x0:hh(ae.t0),x1:hh(ae.t3),y0:0,y1:1,yref:'paper',fillcolor:'rgba(87,6,140,0.07)',line:{width:0}}];
+  Plotly.react('d_plot1',traces,{...base,title:'Speed: twelve weekdays (grey), one highlighted, and the average',xaxis:{title:'clock time (h)',range:[6,21]},yaxis:{title:'mph',range:[0,80]},shapes},cfg);
+  Plotly.react('d_plot2',ftr,{...base,title:'Flow (shaded: episode identified on the averaged profile)',xaxis:{title:'clock time (h)',range:[6,21]},yaxis:{title:'veh/h/lane'},shapes},cfg);
+}
+bind('d_day',dataPart);
+
+// ---------- Part 7: evidence ----------
+function evidence(){
+  const p=el('e_pol').value, E=DATA.episodes.filter(e=>e.admitted);
+  const m=DATA.emission_metrics[`M_${p}`], s=DATA.emission_metrics[`S_${p}`];
+  el('e_tiles').innerHTML = tile('Common sample',E.length,'episodes')+tile('Two-speed M: R²',fmt(m.R2,3),`bias ${fmt(m.bias_pct,1)}%, WAPE ${fmt(m.WAPE_pct,1)}%`)+tile('Single-speed S: R²',fmt(s.R2,3),`bias ${fmt(s.bias_pct,1)}%, WAPE ${fmt(s.WAPE_pct,1)}%`);
+  const sc=p==='CO2'?1000:1, u=p==='CO2'?'kg/lane':'g/lane';
+  const O=E.map(e=>e[`O_${p}`]/sc), M=E.map(e=>e[`M_${p}`]/sc), S=E.map(e=>e[`S_${p}`]/sc), mx=Math.max(...O,...M,...S)*1.05;
+  Plotly.react('e_plot1',[{x:O,y:M,mode:'markers',name:'two-speed M',marker:{color:col.blue,size:7,opacity:.7},text:E.map(e=>`${e.corridor} ${e.sensor} ${e.date}`)},{x:O,y:S,mode:'markers',name:'single-speed S',marker:{color:'rgba(0,0,0,0)',line:{color:'#333',width:1},size:7}},{x:[0,mx],y:[0,mx],mode:'lines',name:'equality',line:{color:col.grey,dash:'dash'}}],
+    {...base,title:`${PL[p]}: comparison estimates against the recorded-speed calculation O`,xaxis:{title:`O (${u})`},yaxis:{title:`estimate (${u})`}},cfg);
+  const az=E.filter(e=>e.dataset==='AZ'), pe=E.filter(e=>e.dataset==='PeMS'), gs=p==='CO2'?1000:1;
+  Plotly.react('e_plot2',[{x:az.map(e=>e.x),y:az.map(e=>e[`Gamma_${p}`]/gs),mode:'markers',name:'Arizona I-10',marker:{color:'rgba(0,0,0,0)',line:{color:'#333',width:1},size:8}},{x:pe.map(e=>e.x),y:pe.map(e=>e[`Gamma_${p}`]/gs),mode:'markers',name:'PeMS corridors',marker:{color:'rgba(0,0,0,0)',line:{color:col.grey,width:1},size:7,symbol:'square'}},{x:[0,8],y:[0,0],mode:'lines',name:'zero',line:{color:col.grey,dash:'dash'}}],
+    {...base,title:`Delay-emission factor Γ at the calibrated states (${p==='CO2'?'kg':'g'}/veh h)`,xaxis:{title:'x = D/C (h)'},yaxis:{title:'Γ'}},cfg);
+}
+bind('e_pol',evidence);
+
+// ---------- Part 8: scope ----------
+function scope(){
+  const ex=DATA.exclusions, coh=DATA.cohort.pairs['1.5_1'], cor=DATA.corridor.per_detector['78'], dt=DATA.daytime;
+  el('sc_tiles').innerHTML = tile('Calibration-eligible','293','average-weekday episodes')+tile('Fitted','286','supported model')+tile('Two-speed-admitted','137',`finite-link condition; ${ex[0].excluded} excluded`)+tile('Transition-admissible',coh.n_band_nonempty,`band non-empty at 1.5/1.0 m/s²; ${coh.n_band_empty} empty (PeMS)`,'bad')
+    +tile('Median admitted share',fmt(coh.inside_median_pct,0)+'%','of each cohort, where the band is not empty')+tile('Corridor check, detector 78',`${cor.link_admitted} → ${cor.corridor_admitted}`,`of ${cor.valid_queue_state} daily episodes: single link → 4.59-mi corridor`)+tile('Daytime window',`${dt.boundary_crossing.cross_internal_boundary} of ${dt.boundary_crossing.episodes}`,'episodes cross 10:00 or 16:00');
+  const pairs=Object.values(DATA.cohort.pairs);
+  Plotly.react('sc_plot1',[{x:pairs.map(q=>`${q.a_down}/${q.a_up}`),y:pairs.map(q=>q.n_band_nonempty),type:'bar',name:'non-empty band',marker:{color:col.green}},{x:pairs.map(q=>`${q.a_down}/${q.a_up}`),y:pairs.map(q=>q.n_band_empty),type:'bar',name:'empty band',marker:{color:col.red}}],{...base,barmode:'stack',title:'Cohort admissibility by peak magnitudes (a↓/a↑, m/s²)',xaxis:{title:'peak deceleration / acceleration'},yaxis:{title:'episodes (of 137)'}},cfg);
+  const dets=Object.keys(DATA.corridor.per_detector);
+  Plotly.react('sc_plot2',[{x:dets,y:dets.map(k=>DATA.corridor.per_detector[k].link_admitted),type:'bar',name:'single-link inequality',marker:{color:col.grey}},{x:dets,y:dets.map(k=>DATA.corridor.per_detector[k].corridor_admitted),type:'bar',name:'corridor inequality',marker:{color:col.accent}}],{...base,barmode:'group',title:'Arizona daily episodes admitted, by detector',xaxis:{title:'detector'},yaxis:{title:'episodes'}},cfg);
+}
+
+function renderMath(){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}
+window.addEventListener('load',()=>{renderMath(); puzzle(); states(); episode(); identity(); response(); transitions(); dataPart(); evidence(); scope();});
+})();
+</script>
+</body>
+</html>

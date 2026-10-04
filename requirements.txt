@@ -1,0 +1,11 @@
+# Tested environment (lock) for this release. pyproject.toml gives the minimum versions.
+numpy==2.4.6
+pandas==3.0.2
+scipy==1.17.1
+matplotlib==3.10.8
+pypdfium2==5.11.0
+nbformat==5.10.4
+nbclient==0.10.4
+ipykernel==7.2.0
+pytest==9.0.3
+sympy==1.14.0

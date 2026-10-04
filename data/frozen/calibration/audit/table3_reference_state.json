@@ -1,0 +1,83 @@
+{
+  "reference_sensor_uid": "AZ_I10_W::78",
+  "period": "MD",
+  "calibration_scope": "corridor_all_periods",
+  "N_train": 5,
+  "N_source": 43,
+  "reference_interpretation": "Conditional median reference; not an observed month or episode.",
+  "x_h": 1.5739012349093728,
+  "P_h": 2.015132123355823,
+  "C_vphpl": 1501.6157386990858,
+  "vf_mph": 64.16137486955441,
+  "L_mi": 1.0400000000000205,
+  "Tf_h": 0.01620912896761377,
+  "mu_vphpl": 1172.8237757244683,
+  "omega_mph": 7.638068452895794,
+  "kq_veh_mi_lane": 66.45021408785362,
+  "vq_mph": 17.649661356604234,
+  "peak_delay_h": 0.030413451025677923,
+  "mean_delay_h": 0.013933622968363583,
+  "kj_veh_mi_lane": 220.0,
+  "traffic_parameters": {
+    "fd": 1.2373036267126496,
+    "n": 1.07538813292762,
+    "fp": 0.963141822305749,
+    "s": 0.9517332475469742,
+    "theta": 0.4581401484691591
+  },
+  "cubic_rate_sha256": "c8b0802937793c93c832c63da3894ab91b13d4777a9ce86a275cad94d5fdc089",
+  "rates": [
+    {
+      "pollutant": "CO2",
+      "c0": 8801.633440397325,
+      "c1": -281.9437306321036,
+      "c2": 9.963472283997316,
+      "c3": -0.05132177876849053,
+      "speed_min_mph": 5.0,
+      "speed_max_mph": 75.0
+    },
+    {
+      "pollutant": "NOx",
+      "c0": 7.422341517734551,
+      "c1": -0.5071325265593435,
+      "c2": 0.01804329008046688,
+      "c3": -8.947978376299922e-05,
+      "speed_min_mph": 5.0,
+      "speed_max_mph": 75.0
+    },
+    {
+      "pollutant": "CO",
+      "c0": 58.178423969901566,
+      "c1": 0.06492322686651926,
+      "c2": 0.02017638256474425,
+      "c3": -9.439572458426686e-05,
+      "speed_min_mph": 5.0,
+      "speed_max_mph": 75.0
+    },
+    {
+      "pollutant": "HC",
+      "c0": 2.941868430060413,
+      "c1": -0.0407633863391412,
+      "c2": 0.0019420510837799651,
+      "c3": -1.2368607529741969e-05,
+      "speed_min_mph": 5.0,
+      "speed_max_mph": 75.0
+    }
+  ],
+  "transition_geometry": {
+    "peak_deceleration_mps2": 1.5,
+    "peak_acceleration_mps2": 1.0,
+    "T_down_s": 20.792596408829244,
+    "T_up_s": 31.188894613243868,
+    "distance_down_mi": 0.23625886917203132,
+    "distance_up_mi": 0.354388303758047,
+    "admissible_delay_lower_min": 0.31401917214083835,
+    "admissible_delay_upper_min": 1.4213847757948164,
+    "mean_delay_min": 0.836017378101815,
+    "peak_delay_min": 1.8248070615406753,
+    "peak_free_flow_portion_s": 16.80561833853732,
+    "required_half_transitions_s": 25.990745511036558,
+    "mean_admitted": true,
+    "peak_admitted": false
+  }
+}

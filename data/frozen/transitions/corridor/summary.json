@@ -1,0 +1,19 @@
+{
+ "corridor_span_mi": 4.591000000000008,
+ "corridor_Tff_min": 3.865159571629759,
+ "n_dates": 258,
+ "n_detector_episodes": 1312,
+ "n_corridor_episodes": 158,
+ "det78_n": 195,
+ "det78_corr_log": 0.8613902938241098,
+ "det78_median_ratio_corr_over_local": 2.0038134400428076,
+ "det84_n": 206,
+ "det84_corr_log": 0.9168673797549974,
+ "det84_median_ratio_corr_over_local": 2.5097010390350443,
+ "det137_n": 180,
+ "det137_corr_log": 0.734668743063492,
+ "det137_median_ratio_corr_over_local": 2.995585136961931,
+ "det139_n": 212,
+ "det139_corr_log": 0.9659653625507417,
+ "det139_median_ratio_corr_over_local": 3.079941157660917
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "selected_context": "AZ_I10_W/MD",
+  "reference_sensor_uid": "AZ_I10_W::78",
+  "network_interval_h": [
+    0.5443172086656729,
+    2.2934646035912545
+  ],
+  "maximum_PoA_difference": 0.0018152276372846998,
+  "maximum_assignment_share_difference": 0.04044216399106326,
+  "derivative_checks_pass": true,
+  "full_and_surrogate_compared": true
+}

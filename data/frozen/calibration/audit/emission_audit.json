@@ -1,0 +1,52 @@
+{
+  "detected": 325,
+  "eligible": 293,
+  "fitted": 286,
+  "stages": [
+    {
+      "stage": "finite_link_admission",
+      "excluded": 149,
+      "remaining": 137
+    },
+    {
+      "stage": "profile_reconstruction",
+      "excluded": 0,
+      "remaining": 137
+    },
+    {
+      "stage": "common_rate_domain",
+      "excluded": 0,
+      "remaining": 137
+    },
+    {
+      "stage": "common_positive_finite_emissions",
+      "excluded": 0,
+      "remaining": 137
+    }
+  ],
+  "retained": 137,
+  "excluded": 149,
+  "excluded_fraction": 0.5209790209790209,
+  "medians": [
+    {
+      "population": "retained",
+      "N": 137,
+      "median_x_h": 2.167419805814274,
+      "median_P_h": 2.5,
+      "median_vt2_mph": 37.80285714285716
+    },
+    {
+      "population": "excluded",
+      "N": 149,
+      "median_x_h": 4.112312216136752,
+      "median_P_h": 4.833333333333333,
+      "median_vt2_mph": 28.60869565217391
+    }
+  ],
+  "physical_failure_reasons": {
+    "queue_exceeds_link": 149
+  },
+  "O_max_abs_error_g": 4.656612873077393e-10,
+  "O_accounting": "sum(q_vphpl/12 * L_mi/v_mph * rate_g_vehicle_hour) within [t0,t3)",
+  "WAPE": "100 sum(abs(predicted_episode_total - O_episode_total)) / sum(O_episode_total)"
+}

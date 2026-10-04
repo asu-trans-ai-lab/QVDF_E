@@ -1,0 +1,35 @@
+{
+ "sensor": "AZ_I10_W::78",
+ "month": "2016-11",
+ "dates": [
+  "2016-11-01",
+  "2016-11-02",
+  "2016-11-04",
+  "2016-11-09",
+  "2016-11-10",
+  "2016-11-11",
+  "2016-11-14",
+  "2016-11-15",
+  "2016-11-16",
+  "2016-11-17",
+  "2016-11-28",
+  "2016-11-29"
+ ],
+ "representative_date": "2016-11-01",
+ "average_profile_episode": {
+  "t0": "2016-11-01 14:35:00",
+  "t3": "2016-11-01 19:20:00",
+  "P_h": 4.75,
+  "D_veh": 5003.016666666666,
+  "period": "PM"
+ },
+ "vf_monthly_mph": 64.16137486955441,
+ "flow_convention": "veh/h/lane",
+ "averaging": "arithmetic mean flow; flow-weighted harmonic mean speed",
+ "provenance": "legacy ADOT loop-detector data, cleaned, synchronized and post-processed for Zhou et al. (2022); research use",
+ "sources": {
+  "calibration/daily_validation/traffic_panel.csv.gz": "ac1ee5e3e1264ede89adf3389259746544c03a4b49be40a20a81defef15d3ffb",
+  "calibration/average_weekday/traffic_panel.csv.gz": "e4653f592461f223dada3d1f0e78d45b981df5570f16c91f8216d896ccce02f0",
+  "calibration/daily_validation/episode_results_v2.csv": "6be98285060bf65bf9377f1699edb09ef03343c05b3b9a09d7d808528697520d"
+ }
+}

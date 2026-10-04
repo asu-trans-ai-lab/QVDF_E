@@ -1,0 +1,41 @@
+{
+  "state": {
+    "kc_veh_mi_lane": 33.333333333333336,
+    "omega_mph": 12.0,
+    "kq_veh_mi_lane": 75.0,
+    "vq_mph": 20.0
+  },
+  "queue": {
+    "D_veh_lane": 3000.0,
+    "W_P_veh_h_lane": 44.44444444444444,
+    "peak_delay_min": 1.5802469135802468,
+    "mean_delay_min": 0.888888888888889,
+    "mean_over_peak_newell": 0.5625,
+    "numerical_D_veh_lane": 2999.99999166667,
+    "numerical_W_P_veh_h_lane": 44.44443333333298,
+    "numerical_closure_error_veh": 8.33332978800172e-06
+  },
+  "finite_link": {
+    "allowance_min": 2.0000000000000004,
+    "peak_vehicle_ok": true,
+    "T_free_peak_vehicle_min": 0.20987654320987634,
+    "T_queue_peak_vehicle_min": 2.3703703703703702
+  },
+  "emission": {
+    "pollutant": "CO2",
+    "e0_g_per_veh": 277.8000935144583,
+    "Gamma_g_per_veh_h": 1772.3574613756355,
+    "e_mean_vehicle_g": 304.05724109039363,
+    "E_P_delay_form_kg_lane": 912.1717232711809,
+    "E_P_vmt_vht_form_kg_lane": 912.171723271181,
+    "VMT_veh_mi": 3000.0,
+    "VHT_veh_h": 94.44444444444446
+  },
+  "checks": {
+    "conservation_D": true,
+    "total_delay_W": true,
+    "closed_queue": true,
+    "peak_vehicle_fits_link": true,
+    "two_forms_agree": true
+  }
+}

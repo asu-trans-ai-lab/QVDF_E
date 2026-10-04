@@ -1,0 +1,67 @@
+{
+  "episode": {
+    "id": "state_transition__AZ_I10_W::78__2016-04-01__027",
+    "D_veh_lane": 4688.7444444444445,
+    "P_hat_h": 4.371538409470127,
+    "x_h": 3.1224662366062472,
+    "vf_mph": 64.16137486955441,
+    "vq_hat_mph": 13.478312831438965,
+    "L_mi": 1.0400000000000205,
+    "peak_delay_min": 3.342419279844996,
+    "mean_delay_min": 1.453382063558382,
+    "reconstructed_D_veh_lane": 4688.744444444445,
+    "lambda_min_vphpl": 1023.5713952137253
+  },
+  "baseline_Eq9": {
+    "allowance_min": 3.6571118328688113,
+    "peak_vehicle_ok": true
+  },
+  "transition_Eq26": {
+    "T_down_s": 22.657356053519127,
+    "T_up_s": 33.98603408027869,
+    "w_lo_min": 0.3728697706937075,
+    "w_hi_min": 1.8821243077833278,
+    "share_inside_pct": 29.530000000000005,
+    "share_below_pct": 31.025,
+    "share_above_pct": 39.445,
+    "D_A_veh_lane": 1384.586234444445,
+    "wbar_A_min": 1.0598938129906974
+  },
+  "admitted_subset_speed_only_emissions": {
+    "CO2": {
+      "de_tr_g_per_veh": -20.716453834020598,
+      "E_A_g_lane": 467973.3364926938,
+      "direct_sum_g_lane": 467973.33649269375,
+      "with_episode_mean_delay_g_lane": 500945.6368271201,
+      "substitution_error_pct": 7.045764739833871
+    },
+    "NOx": {
+      "de_tr_g_per_veh": -0.03961095045470818,
+      "E_A_g_lane": 464.9203728667101,
+      "direct_sum_g_lane": 464.9203728667102,
+      "with_episode_mean_delay_g_lane": 445.1849703976776,
+      "substitution_error_pct": -4.244899475439967
+    },
+    "CO": {
+      "de_tr_g_per_veh": -0.04772063826142289,
+      "E_A_g_lane": 3788.8627115976174,
+      "direct_sum_g_lane": 3788.862711597618,
+      "with_episode_mean_delay_g_lane": 4216.2550310559545,
+      "substitution_error_pct": 11.280227128581345
+    },
+    "HC": {
+      "de_tr_g_per_veh": -0.002606646166837976,
+      "E_A_g_lane": 161.01243652449256,
+      "direct_sum_g_lane": 161.01243652449253,
+      "with_episode_mean_delay_g_lane": 180.01623223045422,
+      "substitution_error_pct": 11.802688112896732
+    }
+  },
+  "checks": {
+    "reconstruction_conserves_D": true,
+    "arrivals_nonnegative": true,
+    "baseline_feasible": true,
+    "shares_sum_to_one": true,
+    "subset_identity": true
+  }
+}

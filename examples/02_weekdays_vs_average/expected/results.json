@@ -1,0 +1,28 @@
+{
+  "n_days": 12,
+  "bins": 288,
+  "profile_check": {
+    "flow_max_rel_diff": 2.8647306972814925e-16,
+    "speed_max_rel_diff": 5.479766725315579e-10,
+    "passes": true
+  },
+  "days_without_pm_episode": [
+    "2016-11-11"
+  ],
+  "daily_pm_episodes": {
+    "count": 11,
+    "P_h_mean": 5.318181818272728,
+    "P_h_min": 4.333333333,
+    "P_h_max": 6.166666667,
+    "D_veh_mean": 5683.054545454545,
+    "mean_delay_min_mean": 2.828292344781818,
+    "min_speed_mph_mean": 4.577229798181818
+  },
+  "average_profile_episode": {
+    "t0": "14:35",
+    "t3": "19:20",
+    "P_h": 4.75,
+    "D_veh": 5003.016666666666
+  },
+  "average_profile_min_speed_mph": 6.686485005
+}

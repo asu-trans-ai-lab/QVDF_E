@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "mode": "surrogate",
+  "all_20001_states_admissible": true,
+  "minimum_P_minus_x_h": 0.09898453872900725,
+  "minimum_peak_delay_margin_h": 0.0036205725458678464,
+  "minimum_arrival_ratio": 0.9453249939649316,
+  "queue_speed_range_mph": [
+    16.113717726911098,
+    23.68071302500577
+  ],
+  "all_total_emissions_positive": true,
+  "all_background_emissions_included": true,
+  "solver_checks": [
+    {
+      "objective": "time",
+      "eta": 0.0,
+      "global_optimizer_relative_gap": 1.980286343819337e-14,
+      "derivative_scaled_error": 7.457402750876696e-13,
+      "maximum_Wardrop_residual": 4.295175326518574e-15,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "CO2",
+      "eta": 0.0,
+      "global_optimizer_relative_gap": 4.706102723172416e-13,
+      "derivative_scaled_error": 4.5324248095277236e-11,
+      "maximum_Wardrop_residual": 0.0,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "NOx",
+      "eta": 0.0,
+      "global_optimizer_relative_gap": 1.27460338061825e-13,
+      "derivative_scaled_error": 1.0158318630715257e-11,
+      "maximum_Wardrop_residual": 0.0,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "CO",
+      "eta": 0.0,
+      "global_optimizer_relative_gap": 1.2104337468883334e-13,
+      "derivative_scaled_error": 3.8941710966966525e-11,
+      "maximum_Wardrop_residual": 0.0,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "HC",
+      "eta": 0.0,
+      "global_optimizer_relative_gap": 5.460287059984589e-16,
+      "derivative_scaled_error": 1.3733328710352488e-12,
+      "maximum_Wardrop_residual": 0.0,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "generalized",
+      "eta": 0.0,
+      "global_optimizer_relative_gap": 1.980286343819337e-14,
+      "derivative_scaled_error": 7.457402750876696e-13,
+      "maximum_Wardrop_residual": 4.295175326518574e-15,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "generalized",
+      "eta": 0.25,
+      "global_optimizer_relative_gap": 5.464767530905856e-14,
+      "derivative_scaled_error": 7.967029813649162e-13,
+      "maximum_Wardrop_residual": 1.2490009027033011e-15,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "generalized",
+      "eta": 1.0,
+      "global_optimizer_relative_gap": 1.6779598077077802e-14,
+      "derivative_scaled_error": 9.487688412690432e-13,
+      "maximum_Wardrop_residual": 0.0,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    },
+    {
+      "objective": "generalized",
+      "eta": 4.0,
+      "global_optimizer_relative_gap": 5.792213553687971e-16,
+      "derivative_scaled_error": 3.0269953210648737e-12,
+      "maximum_Wardrop_residual": 0.0,
+      "doubled_grid_same_equilibria": true,
+      "doubled_grid_same_optimum": true
+    }
+  ]
+}

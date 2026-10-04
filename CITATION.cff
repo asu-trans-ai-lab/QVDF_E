@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the manuscript and this repository release."
+title: "QVDFE: From Bottleneck Episodes to Travel and Emission Costs (code and data release)"
+version: 1.0.1
+date-released: "2026-10-04"
+authors:
+  - family-names: Abbasi
+    given-names: Mohammad
+    affiliation: "School of Sustainable Engineering and the Built Environment, Arizona State University"
+  - family-names: Zhou
+    given-names: Xuesong
+    affiliation: "School of Sustainable Engineering and the Built Environment, Arizona State University"
+    orcid: "https://orcid.org/0000-0002-9963-5369"
+license: MIT
+repository-code: "https://github.com/asu-trans-ai-lab/QVDF_E"
+keywords:
+  - congestion episode
+  - bottleneck
+  - fluid queue
+  - QVDF
+  - kinematic smoothing
+  - link emission function
+preferred-citation:
+  type: unpublished
+  title: "From Bottleneck Episodes to Travel and Emission Costs: A Cross-Resolution Framework with Empirical Evaluation"
+  authors:
+    - family-names: Abbasi
+      given-names: Mohammad
+    - family-names: Zhou
+      given-names: Xuesong
+  year: 2026
+  notes: "Manuscript."

@@ -1,0 +1,224 @@
+{
+ "n_transitions": 282,
+ "n_modal_eligible": 282,
+ "n_decomposition": 282,
+ "n_replace_ok": 281,
+ "replace_ok_failure_reasons": {
+  "time_share_outside_0_1": 1,
+  "speed_outside_5_75": 0
+ },
+ "groups": {
+  "acceleration": {
+   "N": 112,
+   "speed_rmse_ms": 0.7563563249107537,
+   "acc_rmse_ms2": 0.3772688965621914,
+   "vsp_rmse_pp": 4.452253041407793,
+   "CO2_disc_signed_pct": 0.2315378933557624,
+   "CO2_disc_abs_pct": 1.763021585961094,
+   "CO2_q1_g": -0.4235119976328795,
+   "CO2_q2_g": -0.4235119976328807,
+   "CO2_q3_g": -0.29471667241793487,
+   "CO2_q4_g": -0.307530440783931,
+   "CO2_load_g": 16.082973353775774,
+   "CO2_combined_g": 15.776282763788274,
+   "share_speed_only_negative": 1.0,
+   "share_load_positive": 1.0,
+   "share_combined_positive": 1.0,
+   "other_disc_abs_pct": {
+    "NOX": 3.888466976425584,
+    "CO": 3.2375929589594232,
+    "HC": 2.1478590347808466
+   },
+   "vsp_out_of_range_max": 0.40540540540540543,
+   "ks1_acc_processing_rmse_median": 0.011848810993979799,
+   "excursion_contribution_CO2_median_g": 14.404152749482652,
+   "n_excursion_evaluated": 82
+  },
+  "deceleration": {
+   "N": 170,
+   "speed_rmse_ms": 1.0304245827213312,
+   "acc_rmse_ms2": 0.5554584451714827,
+   "vsp_rmse_pp": 4.86845150309641,
+   "CO2_disc_signed_pct": -4.28224034234944,
+   "CO2_disc_abs_pct": 8.065208869307057,
+   "CO2_q1_g": -0.5080977975083585,
+   "CO2_q2_g": -0.5080977975083574,
+   "CO2_q3_g": -0.2947166724179411,
+   "CO2_q4_g": -0.2947166724179411,
+   "CO2_load_g": -6.3595423981548285,
+   "CO2_combined_g": -6.758365824899383,
+   "share_speed_only_negative": 0.9941176470588236,
+   "share_load_positive": 0.0,
+   "share_combined_positive": 0.0,
+   "other_disc_abs_pct": {
+    "NOX": 23.22229371932378,
+    "CO": 11.953502095022136,
+    "HC": 4.329057011104796
+   },
+   "vsp_out_of_range_max": 0.9230769230769231,
+   "ks1_acc_processing_rmse_median": 0.012383101924976488,
+   "excursion_contribution_CO2_median_g": -0.5532896760855035,
+   "n_excursion_evaluated": 64
+  }
+ },
+ "numerics": {
+  "max_abs_q1_minus_q2_g": 2.020605904817785e-14,
+  "median_q3_minus_q1_g": 0.19002691007276756,
+  "median_q4_minus_q3_g": 0.0,
+  "dx_ks1_orig_rel_max": 0.02135454063476667,
+  "dx_ks1_proc_rel_max": 0.01835905535517641,
+  "dx_meas_proc_rel_median": 0.0034888931745826624
+ },
+ "examples": {
+  "decel": {
+   "run": 1,
+   "vehicle": 25,
+   "i1": 12684,
+   "i2": 12734,
+   "T_s": 5.0
+  },
+  "accel": {
+   "run": 5,
+   "vehicle": 25,
+   "i1": 11384,
+   "i2": 11448,
+   "T_s": 6.4
+  }
+ },
+ "boundary_sensitivity_examples_CO2": {
+  "decel": {
+   "E_meas_padded_g": 5.140451769313714,
+   "E_meas_continuing_g": 4.968286226188431
+  },
+  "accel": {
+   "E_meas_padded_g": 26.54601868265416,
+   "E_meas_continuing_g": 26.952088586772135
+  }
+ },
+ "az78_synthetic": {
+  "deceleration": {
+   "CO2": {
+    "T_s": 20.8,
+    "E2s0_lookup_g": 79.58161327034011,
+    "E2s0_cubic_g": 71.70070443108304,
+    "de_speed_closed_cubic_g": -5.8812145621535,
+    "de_speed_numeric_cubic_g": -5.7211527761479175,
+    "de_speed_lookup_g": -14.819827125230404,
+    "de_load_g": -35.2464667410221,
+    "de_combined_g": -50.0662938662525
+   },
+   "NOX": {
+    "T_s": 20.8,
+    "E2s0_lookup_g": 0.09943628364023369,
+    "E2s0_cubic_g": 0.08414910090253507,
+    "de_speed_closed_cubic_g": -0.011332554104437448,
+    "de_speed_numeric_cubic_g": -0.011028031803343205,
+    "de_speed_lookup_g": -0.028877116661626095,
+    "de_load_g": -0.05312393828320343,
+    "de_combined_g": -0.08200105494482952
+   },
+   "CO": {
+    "T_s": 20.8,
+    "E2s0_lookup_g": 0.5714753526628374,
+    "E2s0_cubic_g": 0.5361083927205842,
+    "de_speed_closed_cubic_g": -0.01378807658073052,
+    "de_speed_numeric_cubic_g": -0.01301916623878574,
+    "de_speed_lookup_g": -0.0729963621866353,
+    "de_load_g": -0.30816014441721434,
+    "de_combined_g": -0.38115650660384964
+   },
+   "HC": {
+    "T_s": 20.8,
+    "E2s0_lookup_g": 0.023751395351550478,
+    "E2s0_cubic_g": 0.02257374573239293,
+    "de_speed_closed_cubic_g": -0.0006803047679586464,
+    "de_speed_numeric_cubic_g": -0.0006484374205945956,
+    "de_speed_lookup_g": -0.002313086454772191,
+    "de_load_g": -0.0032744242790598843,
+    "de_combined_g": -0.005587510733832075
+   }
+  },
+  "acceleration": {
+   "CO2": {
+    "T_s": 31.200000000000003,
+    "E2s0_lookup_g": 119.37241990551017,
+    "E2s0_cubic_g": 107.55105664662457,
+    "de_speed_closed_cubic_g": -8.821821843230248,
+    "de_speed_numeric_cubic_g": -8.981883628179759,
+    "de_speed_lookup_g": -22.787084789228388,
+    "de_load_g": 120.72536054486815,
+    "de_combined_g": 97.93827575563976
+   },
+   "NOX": {
+    "T_s": 31.200000000000003,
+    "E2s0_lookup_g": 0.14915442546035051,
+    "E2s0_cubic_g": 0.12622365135380262,
+    "de_speed_closed_cubic_g": -0.016998831156656173,
+    "de_speed_numeric_cubic_g": -0.01730335345571564,
+    "de_speed_lookup_g": -0.0443824604811458,
+    "de_load_g": 0.26518660968150504,
+    "de_combined_g": 0.22080414920035923
+   },
+   "CO": {
+    "T_s": 31.200000000000003,
+    "E2s0_lookup_g": 0.8572130289942563,
+    "E2s0_cubic_g": 0.8041625890808763,
+    "de_speed_closed_cubic_g": -0.02068211487109578,
+    "de_speed_numeric_cubic_g": -0.021451025210564856,
+    "de_speed_lookup_g": -0.11240708510558617,
+    "de_load_g": 2.2598483673932694,
+    "de_combined_g": 2.1474412822876836
+   },
+   "HC": {
+    "T_s": 31.200000000000003,
+    "E2s0_lookup_g": 0.03562709302732572,
+    "E2s0_cubic_g": 0.033860618598589395,
+    "de_speed_closed_cubic_g": -0.0010204571519379696,
+    "de_speed_numeric_cubic_g": -0.0010523244991798714,
+    "de_speed_lookup_g": -0.003578589816894344,
+    "de_load_g": 0.06126327756063772,
+    "de_combined_g": 0.05768468774374338
+   }
+  },
+  "both": {
+   "CO2": {
+    "E2s0_lookup_g": 198.95403317585027,
+    "E2s0_cubic_g": 179.2517610777076,
+    "de_speed_closed_cubic_g": -14.703036405383749,
+    "de_speed_numeric_cubic_g": -14.703036404327676,
+    "de_speed_lookup_g": -37.60691191445879,
+    "de_load_g": 85.47889380384606,
+    "de_combined_g": 47.871981889387264,
+    "rate_approx_gap_g": -22.903875510131115,
+    "rate_approx_gap_pct_of_E2s0_lookup": -11.512144360444797
+   },
+   "NOX": {
+    "E2s0_lookup_g": 0.2485907091005842,
+    "E2s0_cubic_g": 0.21037275225633767,
+    "de_speed_closed_cubic_g": -0.02833138526109362,
+    "de_speed_numeric_cubic_g": -0.028331385259058844,
+    "de_speed_lookup_g": -0.0732595771427719,
+    "de_load_g": 0.2120626713983016,
+    "de_combined_g": 0.13880309425552972
+   },
+   "CO": {
+    "E2s0_lookup_g": 1.4286883816570937,
+    "E2s0_cubic_g": 1.3402709818014604,
+    "de_speed_closed_cubic_g": -0.0344701914518263,
+    "de_speed_numeric_cubic_g": -0.034470191449350596,
+    "de_speed_lookup_g": -0.18540344729222147,
+    "de_load_g": 1.951688222976055,
+    "de_combined_g": 1.766284775683834
+   },
+   "HC": {
+    "E2s0_lookup_g": 0.059378488378876194,
+    "E2s0_cubic_g": 0.056434364330982326,
+    "de_speed_closed_cubic_g": -0.001700761919896616,
+    "de_speed_numeric_cubic_g": -0.001700761919774467,
+    "de_speed_lookup_g": -0.005891676271666535,
+    "de_load_g": 0.05798885328157784,
+    "de_combined_g": 0.0520971770099113
+   }
+  }
+ }
+}

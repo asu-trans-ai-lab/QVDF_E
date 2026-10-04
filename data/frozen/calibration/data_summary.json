@@ -1,0 +1,45 @@
+{
+  "i10_monthly_profiles": 50,
+  "i10_months": [
+    "2016-01",
+    "2016-02",
+    "2016-03",
+    "2016-04",
+    "2016-05",
+    "2016-06",
+    "2016-08",
+    "2016-09",
+    "2016-10",
+    "2016-11",
+    "2016-12"
+  ],
+  "i10_selected_complete_sensor_days": 782,
+  "i10_all_complete_sensor_days": 796,
+  "i10_omitted_sensor_months": 10,
+  "i10_profile_day_count_range": [
+    8,
+    21
+  ],
+  "i10_average_VHT_preservation_relative_error": 2.1413733648878265e-16,
+  "zero_flow_speed_fallback_bins": 0,
+  "pems_profiles": 347,
+  "detected_by_corridor": {
+    "AZ_I10_W": 44,
+    "D12_I405_N": 19,
+    "D12_I405_S": 11,
+    "D12_I5_N": 37,
+    "D12_I5_S": 61,
+    "D7_I10_E": 34,
+    "D7_I10_W": 35,
+    "D7_I210_E": 20,
+    "D7_I210_W": 33,
+    "D7_I405_N": 15,
+    "D7_I405_S": 16
+  },
+  "daily_validation_train_dates": 206,
+  "daily_validation_test_dates": 52,
+  "daily_validation_last_train_date": "2016-10-19",
+  "daily_validation_first_test_date": "2016-10-20",
+  "daily_data_values_changed": 0,
+  "average_profiles_are_in_sample": true
+}

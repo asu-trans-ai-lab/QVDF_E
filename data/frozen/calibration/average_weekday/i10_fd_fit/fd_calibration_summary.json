@@ -1,0 +1,18 @@
+{
+  "detectors": 5,
+  "accepted": 4,
+  "fallback": 1,
+  "by_dataset": {
+    "I10_monthly_average_weekday": {
+      "count": 5,
+      "sum": 4
+    }
+  },
+  "fallback_reasons": {
+    "active_parameter_bound": 1
+  },
+  "accepted_m_range": [
+    4.274189423202713,
+    7.399222966205652
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "_note": "REAL DATA extract (detector 78, Arizona I-10 westbound, November 2016); see data/examples/detector78_2016-11_meta.json for provenance",
+  "days_file": "detector78_2016-11_days.csv",
+  "average_file": "detector78_2016-11_average.csv",
+  "daily_episodes_file": "detector78_2016-11_daily_episodes.csv",
+  "meta_file": "detector78_2016-11_meta.json",
+  "period": "PM"
+}

@@ -1,0 +1,12 @@
+{
+  "_note": "SYNTHETIC example: round illustrative values, not observed data. Edit any value and rerun run.py.",
+  "C_vphpl": 2000,
+  "vf_mph": 60,
+  "kj_veh_per_mi_lane": 200,
+  "mu_vphpl": 1500,
+  "P_h": 2.0,
+  "newell_b_veh_per_h3": 100,
+  "L_mi": 1.0,
+  "pollutant": "CO2",
+  "_rate_note": "zero-acceleration cubic r(v) in g/(veh h), v in mph, fitted to the archived MOVES-derived passenger-car table (data/.../calibration/cubic_rate_coefficients.csv)"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "cards": 44,
+  "coefficient_rows": 188,
+  "status_counts": {
+    "fitted": 139,
+    "no_admitted_reference_interval": 32,
+    "unavailable_calibration": 16,
+    "failed_fit_or_positive_cost_check": 1
+  },
+  "negative_exponents_fitted": 10,
+  "exact_k_identity_checked": true,
+  "zero_crossings_split": true,
+  "increment_stationary_points_split": true,
+  "calibration_files_modified": false
+}

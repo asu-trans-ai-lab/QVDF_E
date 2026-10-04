@@ -1,0 +1,26 @@
+{
+ "rate_files": {
+  "input_vehicle_emission_rate.csv": "60516669d4d02ed1c3867c2fa20ef3a372cb1e22cb4c597f2392387108fe12cc",
+  "input_vehicle_type.csv": "175a4acc0a774c89b1da9a287b725ec3818e1bc72b634bee52db6c99333aa378"
+ },
+ "rate_dir": "(local path removed)",
+ "vehicle": "MOVES vehicle_type 1, passenger car",
+ "vsp_terms": {
+  "A": 0.156461,
+  "B": 0.00200193,
+  "C": 0.000492646,
+  "m": 1.4788
+ },
+ "grade": 0,
+ "rate_units": "g/h per operating mode, age-weighted with input_vehicle_type.csv percentages",
+ "rate_completeness": "31 ages x 23 op-modes, no missing values, all rates positive",
+ "moves_version_and_settings": "not recorded in the delivery (to be confirmed)",
+ "smoothing": "equal-weight 11-sample centred moving average at 10 Hz (one second)",
+ "acceleration": "centred one-second difference of the smoothed speed",
+ "boundaries": "principal comparison pads both paths with v1 before and v2 after the window",
+ "integration": "left-endpoint 0.1 s intervals over [t1, t2); sum of dt equals T",
+ "braking": "a <= -2 mph/s, or a < -1 mph/s at t, t-1 s, t-2 s; classified before idle/running",
+ "idle": "v < 1 mph",
+ "vsp_bins": "1 kW/t bins i = -20..20 as [i-0.5, i+0.5), plus below/above bins",
+ "cubic_rates": "data/cubic_rate_coefficients_transitions.csv"
+}

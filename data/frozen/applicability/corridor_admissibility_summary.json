@@ -1,0 +1,118 @@
+{
+ "corridor_span_mi": 4.591000000000008,
+ "corridor_Tff_min": 3.865159571629759,
+ "gate": {
+  "78": {
+   "subset": "eligible",
+   "n": 195,
+   "median_ratio": 2.0038134400428076,
+   "corr_log": 0.86139029382411,
+   "summary_n": 195,
+   "summary_ratio": 2.0038134400428076,
+   "summary_corr_log": 0.8613902938241098
+  },
+  "84": {
+   "subset": "eligible",
+   "n": 206,
+   "median_ratio": 2.5097010390350443,
+   "corr_log": 0.9168673797549973,
+   "summary_n": 206,
+   "summary_ratio": 2.5097010390350443,
+   "summary_corr_log": 0.9168673797549974
+  },
+  "137": {
+   "subset": "eligible",
+   "n": 180,
+   "median_ratio": 2.995585136961931,
+   "corr_log": 0.734668743063492,
+   "summary_n": 180,
+   "summary_ratio": 2.995585136961931,
+   "summary_corr_log": 0.734668743063492
+  },
+  "139": {
+   "subset": "eligible",
+   "n": 212,
+   "median_ratio": 3.079941157660917,
+   "corr_log": 0.9659653625507417,
+   "summary_n": 212,
+   "summary_ratio": 3.079941157660917,
+   "summary_corr_log": 0.9659653625507417
+  }
+ },
+ "subset_used": "eligible",
+ "unmatched_corridor_rows": 24,
+ "cross_check": {
+  "single_link_agrees_with_frozen_flag": 787,
+  "single_link_disagrees": 0
+ },
+ "per_detector": {
+  "78": {
+   "matched": 195,
+   "valid_queue_state": 195,
+   "link_admitted": 32,
+   "corridor_admitted": 92,
+   "both": 32,
+   "corridor_only": 60,
+   "link_only": 0,
+   "median_link_allow_min": 3.960264494915919,
+   "median_corr_allow_min": 17.892463269976588,
+   "median_local_peak_min": 9.744487950512514,
+   "median_corridor_peak_min": 18.139267806442323,
+   "median_P_h": 4.666666666666667
+  },
+  "84": {
+   "matched": 206,
+   "valid_queue_state": 203,
+   "link_admitted": 18,
+   "corridor_admitted": 64,
+   "both": 18,
+   "corridor_only": 46,
+   "link_only": 0,
+   "median_link_allow_min": 3.695176228483049,
+   "median_corr_allow_min": 15.013451629211087,
+   "median_local_peak_min": 7.681600505269265,
+   "median_corridor_peak_min": 18.37099095580287,
+   "median_P_h": 5.166666666666667
+  },
+  "137": {
+   "matched": 180,
+   "valid_queue_state": 177,
+   "link_admitted": 72,
+   "corridor_admitted": 81,
+   "both": 64,
+   "corridor_only": 17,
+   "link_only": 8,
+   "median_link_allow_min": 5.290530628431863,
+   "median_corr_allow_min": 18.604291961525966,
+   "median_local_peak_min": 6.077533778321766,
+   "median_corridor_peak_min": 20.266734930087317,
+   "median_P_h": 4.5
+  },
+  "139": {
+   "matched": 212,
+   "valid_queue_state": 212,
+   "link_admitted": 88,
+   "corridor_admitted": 102,
+   "both": 83,
+   "corridor_only": 19,
+   "link_only": 5,
+   "median_link_allow_min": 3.338750959441031,
+   "median_corr_allow_min": 13.390555188095405,
+   "median_local_peak_min": 3.891375243090393,
+   "median_corridor_peak_min": 13.24534793824066,
+   "median_P_h": 3.625
+  }
+ },
+ "corridor_defined_episodes": {
+  "corridor_episodes": 158,
+  "matched_to_detector_78": 148,
+  "valid_queue_state": 148,
+  "corridor_admitted": 60
+ },
+ "inputs": {
+  "data/transitions/corridor/az_detector_vs_corridor.csv": "a8d8f0db91b315ff37df3581906770a331bc8e2321b862f829bf1a92781a73b6",
+  "data/transitions/corridor/az_corridor_episodes.csv": "747248e1f9ee028ada3a56793b543a57c2561f9419f1fc514ae2cc624108ca64",
+  "data/transitions/corridor/summary.json": "723c531271289d786641eb75873cc208797f01cd9c31084fdc842f97528203e3",
+  "data/calibration/daily_validation/episode_results_v2.csv": "6be98285060bf65bf9377f1699edb09ef03343c05b3b9a09d7d808528697520d"
+ }
+}

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qvdfe"
+version = "1.0.1"
+description = "Bottleneck episodes, two-speed emissions, demand-dependent response and finite transitions (Abbasi and Zhou, 2026)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT (code); no claim on data, see LICENSE.md" }
+authors = [{ name = "Mohammad Abbasi" }, { name = "Xuesong (Simon) Zhou" }]
+dependencies = ["numpy>=2.0", "pandas>=2.0", "scipy>=1.11", "matplotlib>=3.7"]
+classifiers = ["Programming Language :: Python :: 3", "Intended Audience :: Science/Research", "Topic :: Scientific/Engineering"]
+
+[project.urls]
+Repository = "https://github.com/asu-trans-ai-lab/QVDF_E"
+
+
+[project.optional-dependencies]
+teaching = ["nbformat>=5.9", "nbclient>=0.9", "ipykernel>=6.25", "jupyterlab>=4"]
+dev = ["pytest>=7", "sympy>=1.12"]
+reproduce = ["pypdfium2>=4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

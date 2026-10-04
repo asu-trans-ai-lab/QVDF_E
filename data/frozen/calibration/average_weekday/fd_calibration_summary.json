@@ -1,0 +1,17 @@
+{
+  "detectors": 352,
+  "accepted": 163,
+  "fallback": 189,
+  "by_dataset": {
+    "I10_monthly_average_weekday": {
+      "count": 5,
+      "sum": 4
+    },
+    "PeMS_average_weekday": {
+      "count": 347,
+      "sum": 159
+    }
+  },
+  "pems_fits_reused_unchanged": true,
+  "i10_fits_independent_of_daily_validation": true
+}

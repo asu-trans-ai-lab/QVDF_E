@@ -1,0 +1,1132 @@
+{
+  "data_source": "(local path removed)",
+  "target": "Compression of full calibrated QVDFE curves; not regression to observed emissions",
+  "reference_selection": "Nearest median capacity among participating detectors with 5<vf<=75; actual detector retained even if its interval is unavailable",
+  "fit": "201 log-spaced nodes; unweighted squared normalized-increment errors on original scale; beta_e permitted negative",
+  "validation": "1001 independent linearly spaced nodes per admitted constant-sign monotone-increment branch",
+  "diagnostic": "k=((e_full/e0)-1)/(a_e*(x/x_ref)^beta_e); exact identity is distinguished from surrogate k=sign_reference",
+  "numerical_parameter_bounds": {
+    "log_a_e": [
+      -30,
+      30
+    ],
+    "beta_e": [
+      -20,
+      20
+    ]
+  },
+  "source_hashes": {
+    "parameter_card_full.csv": "eff10f4e51c2d3c56302b110bcbbd52afd7e3ba546a279ee651a3d1d61fd7724",
+    "sensor_parameters.csv": "65369db0761c6bb8c841a0b34065fb6ac1cbb52b1b57a4e1acde84041496fc28",
+    "episode_results_v2.csv": "8bd71e71cc4fe201a073c7e65aa61b7366a92ee7689445106fb7762e7955a201",
+    "cubic_rate_coefficients.csv": "c8b0802937793c93c832c63da3894ab91b13d4777a9ce86a275cad94d5fdc089"
+  },
+  "contexts": [
+    {
+      "corridor": "AZ_I10_W",
+      "period": "AM",
+      "N_train": 0,
+      "N_source": 43,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "AZ_I10_W::78",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4681022684444174,
+      "x_support_max_h": 5.885911238721851,
+      "x_empirical_median_h": 3.498151933696963,
+      "fd": 1.2373036267126496,
+      "n": 1.07538813292762,
+      "fp": 0.963141822305749,
+      "s": 0.9517332475469742,
+      "theta": 0.4581401484691591,
+      "C_vphpl": 1501.6157386990858,
+      "vf_mph": 64.16137486955441,
+      "L_mi": 1.0400000000000205,
+      "kj": 220.0,
+      "slope_max": 3.4284018566490393,
+      "admitted_intervals": [
+        [
+          0.46810231525464424,
+          2.5575647433884883
+        ]
+      ]
+    },
+    {
+      "corridor": "AZ_I10_W",
+      "period": "MD",
+      "N_train": 5,
+      "N_source": 43,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "AZ_I10_W::78",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4681022684444174,
+      "x_support_max_h": 5.885911238721851,
+      "x_empirical_median_h": 3.498151933696963,
+      "fd": 1.2373036267126496,
+      "n": 1.07538813292762,
+      "fp": 0.963141822305749,
+      "s": 0.9517332475469742,
+      "theta": 0.4581401484691591,
+      "C_vphpl": 1501.6157386990858,
+      "vf_mph": 64.16137486955441,
+      "L_mi": 1.0400000000000205,
+      "kj": 220.0,
+      "slope_max": 3.4284018566490393,
+      "admitted_intervals": [
+        [
+          0.46810231525464424,
+          2.5575647433884883
+        ]
+      ]
+    },
+    {
+      "corridor": "AZ_I10_W",
+      "period": "PM",
+      "N_train": 38,
+      "N_source": 38,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "AZ_I10_W::78",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 1.5471114266555968,
+      "x_support_max_h": 5.885911238721851,
+      "x_empirical_median_h": 3.790752629201432,
+      "fd": 1.6931765723791028,
+      "n": 0.8330311856451446,
+      "fp": 0.3080704729115999,
+      "s": 1.6350981000172309,
+      "theta": 0.4348293681532922,
+      "C_vphpl": 1501.6157386990858,
+      "vf_mph": 64.16137486955441,
+      "L_mi": 1.0400000000000205,
+      "kj": 220.0,
+      "slope_max": 3.584363495177553,
+      "admitted_intervals": [
+        [
+          1.5471115813667395,
+          3.269754843321131
+        ]
+      ]
+    },
+    {
+      "corridor": "AZ_I10_W",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 43,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "AZ_I10_W::78",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4681022684444174,
+      "x_support_max_h": 5.885911238721851,
+      "x_empirical_median_h": 3.498151933696963,
+      "fd": 1.2373036267126496,
+      "n": 1.07538813292762,
+      "fp": 0.963141822305749,
+      "s": 0.9517332475469742,
+      "theta": 0.4581401484691591,
+      "C_vphpl": 1501.6157386990858,
+      "vf_mph": 64.16137486955441,
+      "L_mi": 1.0400000000000205,
+      "kj": 220.0,
+      "slope_max": 3.4284018566490393,
+      "admitted_intervals": [
+        [
+          0.46810231525464424,
+          2.5575647433884883
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I405_N",
+      "period": "AM",
+      "N_train": 1,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I405_N::L405N-100",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5617575031607657,
+      "x_support_max_h": 4.683450868526896,
+      "x_empirical_median_h": 3.1904977231544374,
+      "fd": 1.0922327945724597,
+      "n": 0.9767746759318446,
+      "fp": 0.4561731688367127,
+      "s": 0.5058138555090778,
+      "theta": 0.812737110501748,
+      "C_vphpl": 1333.1291304347826,
+      "vf_mph": 70.92021739130435,
+      "L_mi": 0.2206,
+      "kj": 220.0,
+      "slope_max": 8.680172699239852,
+      "admitted_intervals": [
+        [
+          0.561757559336516,
+          2.7352642665927727
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I405_N",
+      "period": "MD",
+      "N_train": 0,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I405_N::L405N-100",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5617575031607657,
+      "x_support_max_h": 4.683450868526896,
+      "x_empirical_median_h": 3.1904977231544374,
+      "fd": 1.0922327945724597,
+      "n": 0.9767746759318446,
+      "fp": 0.4561731688367127,
+      "s": 0.5058138555090778,
+      "theta": 0.812737110501748,
+      "C_vphpl": 1333.1291304347826,
+      "vf_mph": 70.92021739130435,
+      "L_mi": 0.2206,
+      "kj": 220.0,
+      "slope_max": 8.680172699239852,
+      "admitted_intervals": [
+        [
+          0.561757559336516,
+          2.7352642665927727
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I405_N",
+      "period": "PM",
+      "N_train": 14,
+      "N_source": 14,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D12_I405_N::L405N-100",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5617575031607657,
+      "x_support_max_h": 4.683450868526896,
+      "x_empirical_median_h": 3.198032374834847,
+      "fd": 1.056527818742748,
+      "n": 1.000221039096835,
+      "fp": 0.4672443773604893,
+      "s": 0.5039590405280147,
+      "theta": 0.7938530206665482,
+      "C_vphpl": 1333.1291304347826,
+      "vf_mph": 70.92021739130435,
+      "L_mi": 0.2206,
+      "kj": 220.0,
+      "slope_max": 7.7018156970658875,
+      "admitted_intervals": [
+        [
+          0.561757559336516,
+          1.896872924960592
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I405_N",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I405_N::L405N-100",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5617575031607657,
+      "x_support_max_h": 4.683450868526896,
+      "x_empirical_median_h": 3.1904977231544374,
+      "fd": 1.0922327945724597,
+      "n": 0.9767746759318446,
+      "fp": 0.4561731688367127,
+      "s": 0.5058138555090778,
+      "theta": 0.812737110501748,
+      "C_vphpl": 1333.1291304347826,
+      "vf_mph": 70.92021739130435,
+      "L_mi": 0.2206,
+      "kj": 220.0,
+      "slope_max": 8.680172699239852,
+      "admitted_intervals": [
+        [
+          0.561757559336516,
+          2.7352642665927727
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_N",
+      "period": "AM",
+      "N_train": 7,
+      "N_source": 37,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I5_N::L5N-132",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4326947176145229,
+      "x_support_max_h": 7.440247361926498,
+      "x_empirical_median_h": 3.880094414796485,
+      "fd": 1.0950814475203023,
+      "n": 1.0319513382002132,
+      "fp": 0.5711776848269564,
+      "s": 0.3319749441213607,
+      "theta": 0.7891126472686983,
+      "C_vphpl": 1133.599372822974,
+      "vf_mph": 68.72198042606713,
+      "L_mi": 0.192,
+      "kj": 220.0,
+      "slope_max": 7.4837360993774915,
+      "admitted_intervals": [
+        [
+          0.43269476088399467,
+          7.440246617901762
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_N",
+      "period": "MD",
+      "N_train": 6,
+      "N_source": 37,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I5_N::L5N-132",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4326947176145229,
+      "x_support_max_h": 7.440247361926498,
+      "x_empirical_median_h": 3.880094414796485,
+      "fd": 1.0950814475203023,
+      "n": 1.0319513382002132,
+      "fp": 0.5711776848269564,
+      "s": 0.3319749441213607,
+      "theta": 0.7891126472686983,
+      "C_vphpl": 1133.599372822974,
+      "vf_mph": 68.72198042606713,
+      "L_mi": 0.192,
+      "kj": 220.0,
+      "slope_max": 7.4837360993774915,
+      "admitted_intervals": [
+        [
+          0.43269476088399467,
+          7.440246617901762
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_N",
+      "period": "PM",
+      "N_train": 23,
+      "N_source": 23,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D12_I5_N::L5N-178",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4326947176145229,
+      "x_support_max_h": 7.440247361926498,
+      "x_empirical_median_h": 4.322126764549134,
+      "fd": 1.1564936787796356,
+      "n": 1.007107174601273,
+      "fp": 0.578937023705007,
+      "s": 0.330373729445042,
+      "theta": 0.7858244175018997,
+      "C_vphpl": 1139.6321419104645,
+      "vf_mph": 70.20837579453372,
+      "L_mi": 0.1678,
+      "kj": 220.0,
+      "slope_max": 7.3381326511286105,
+      "admitted_intervals": [
+        [
+          0.43269476088399467,
+          7.440246617901762
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_N",
+      "period": "NT",
+      "N_train": 1,
+      "N_source": 37,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I5_N::L5N-132",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4326947176145229,
+      "x_support_max_h": 7.440247361926498,
+      "x_empirical_median_h": 3.880094414796485,
+      "fd": 1.0950814475203023,
+      "n": 1.0319513382002132,
+      "fp": 0.5711776848269564,
+      "s": 0.3319749441213607,
+      "theta": 0.7891126472686983,
+      "C_vphpl": 1133.599372822974,
+      "vf_mph": 68.72198042606713,
+      "L_mi": 0.192,
+      "kj": 220.0,
+      "slope_max": 7.4837360993774915,
+      "admitted_intervals": [
+        [
+          0.43269476088399467,
+          7.440246617901762
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_S",
+      "period": "AM",
+      "N_train": 42,
+      "N_source": 42,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D12_I5_S::L5S-083",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5721829080408543,
+      "x_support_max_h": 3.577676363220585,
+      "x_empirical_median_h": 2.012165146373347,
+      "fd": 1.1194930392880404,
+      "n": 1.0308417618895644,
+      "fp": 0.4819823587442288,
+      "s": 0.8871068054286773,
+      "theta": 0.7812577427578122,
+      "C_vphpl": 1241.522608695652,
+      "vf_mph": 72.2036956521739,
+      "L_mi": 0.0404,
+      "kj": 220.0,
+      "slope_max": 7.143180769985533,
+      "admitted_intervals": [
+        [
+          0.5721829652591451,
+          3.577676005452949
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_S",
+      "period": "MD",
+      "N_train": 0,
+      "N_source": 59,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I5_S::L5S-174",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4951043127133344,
+      "x_support_max_h": 3.577676363220585,
+      "x_empirical_median_h": 1.945299290361924,
+      "fd": 1.0884668732713347,
+      "n": 1.0357878232411757,
+      "fp": 0.5647231368289346,
+      "s": 0.6287442318822004,
+      "theta": 0.7854871194024728,
+      "C_vphpl": 1243.448932645027,
+      "vf_mph": 71.7991773052975,
+      "L_mi": 0.0963,
+      "kj": 220.0,
+      "slope_max": 7.323449456410197,
+      "admitted_intervals": [
+        [
+          0.4951043622237657,
+          3.577676005452949
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_S",
+      "period": "PM",
+      "N_train": 17,
+      "N_source": 17,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D12_I5_S::L5S-185",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4951043127133344,
+      "x_support_max_h": 2.8517041796795146,
+      "x_empirical_median_h": 1.291051429288909,
+      "fd": 1.0469665074095271,
+      "n": 0.9737926137278072,
+      "fp": 0.6837686791053256,
+      "s": 0.3024774154539397,
+      "theta": 0.787935820366546,
+      "C_vphpl": 1432.9152302351267,
+      "vf_mph": 72.20558997995316,
+      "L_mi": 0.1864,
+      "kj": 220.0,
+      "slope_max": 7.43110714622778,
+      "admitted_intervals": [
+        [
+          0.4951043622237657,
+          0.7078641931586135
+        ]
+      ]
+    },
+    {
+      "corridor": "D12_I5_S",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 59,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D12_I5_S::L5S-174",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.4951043127133344,
+      "x_support_max_h": 3.577676363220585,
+      "x_empirical_median_h": 1.945299290361924,
+      "fd": 1.0884668732713347,
+      "n": 1.0357878232411757,
+      "fp": 0.5647231368289346,
+      "s": 0.6287442318822004,
+      "theta": 0.7854871194024728,
+      "C_vphpl": 1243.448932645027,
+      "vf_mph": 71.7991773052975,
+      "L_mi": 0.0963,
+      "kj": 220.0,
+      "slope_max": 7.323449456410197,
+      "admitted_intervals": [
+        [
+          0.4951043622237657,
+          3.577676005452949
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I10_E",
+      "period": "AM",
+      "N_train": 5,
+      "N_source": 23,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I10_E::L10E-214",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.6197546917514648,
+      "x_support_max_h": 8.760340890209694,
+      "x_empirical_median_h": 5.8671983793886175,
+      "fd": 1.0595126839963975,
+      "n": 1.016582383397227,
+      "fp": 0.5583298400842733,
+      "s": 0.5867351821124374,
+      "theta": 0.6576863444889413,
+      "C_vphpl": 1330.0828675075054,
+      "vf_mph": 68.96647498221901,
+      "L_mi": 0.0889,
+      "kj": 220.0,
+      "slope_max": 3.557137119757692,
+      "admitted_intervals": [
+        [
+          0.619754753726934,
+          1.6563410049181309
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I10_E",
+      "period": "MD",
+      "N_train": 3,
+      "N_source": 23,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I10_E::L10E-214",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.6197546917514648,
+      "x_support_max_h": 8.760340890209694,
+      "x_empirical_median_h": 5.8671983793886175,
+      "fd": 1.0595126839963975,
+      "n": 1.016582383397227,
+      "fp": 0.5583298400842733,
+      "s": 0.5867351821124374,
+      "theta": 0.6576863444889413,
+      "C_vphpl": 1330.0828675075054,
+      "vf_mph": 68.96647498221901,
+      "L_mi": 0.0889,
+      "kj": 220.0,
+      "slope_max": 3.557137119757692,
+      "admitted_intervals": [
+        [
+          0.619754753726934,
+          1.6563410049181309
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I10_E",
+      "period": "PM",
+      "N_train": 15,
+      "N_source": 15,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D7_I10_E::L10E-214",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 1.6080873470089874,
+      "x_support_max_h": 8.760340890209694,
+      "x_empirical_median_h": 6.317299895693677,
+      "fd": 1.1496493415609208,
+      "n": 0.9725510182682272,
+      "fp": 0.2159925759172105,
+      "s": 1.1491174153228814,
+      "theta": 0.6233252791378618,
+      "C_vphpl": 1330.0828675075054,
+      "vf_mph": 68.96647498221901,
+      "L_mi": 0.0889,
+      "kj": 220.0,
+      "slope_max": 3.0962658274224797,
+      "admitted_intervals": [
+        [
+          1.6080875078177221,
+          4.0566180073863025
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I10_E",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 23,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I10_E::L10E-214",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.6197546917514648,
+      "x_support_max_h": 8.760340890209694,
+      "x_empirical_median_h": 5.8671983793886175,
+      "fd": 1.0595126839963975,
+      "n": 1.016582383397227,
+      "fp": 0.5583298400842733,
+      "s": 0.5867351821124374,
+      "theta": 0.6576863444889413,
+      "C_vphpl": 1330.0828675075054,
+      "vf_mph": 68.96647498221901,
+      "L_mi": 0.0889,
+      "kj": 220.0,
+      "slope_max": 3.557137119757692,
+      "admitted_intervals": [
+        [
+          0.619754753726934,
+          1.6563410049181309
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I10_W",
+      "period": "AM",
+      "N_train": 26,
+      "N_source": 26,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D7_I10_W::L10W-084",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.7615971219376251,
+      "x_support_max_h": 7.221374829402467,
+      "x_empirical_median_h": 3.4058874036957385,
+      "fd": 1.0661326851232302,
+      "n": 1.0030818253761506,
+      "fp": 0.4945362210794696,
+      "s": 0.5406357821612428,
+      "theta": 0.7421465046958853,
+      "C_vphpl": 1359.7055217254951,
+      "vf_mph": 67.92813036719309,
+      "L_mi": 0.1541,
+      "kj": 220.0,
+      "slope_max": 5.756342405369305,
+      "admitted_intervals": [
+        [
+          0.7615971980973373,
+          2.034590134366719
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I10_W",
+      "period": "MD",
+      "N_train": 1,
+      "N_source": 30,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I10_W::L10W-084",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5464997413178933,
+      "x_support_max_h": 7.221374829402467,
+      "x_empirical_median_h": 3.0601137442496182,
+      "fd": 1.0471059671714955,
+      "n": 1.017484835632129,
+      "fp": 0.570513881260172,
+      "s": 0.4004929861594133,
+      "theta": 0.7556973297196432,
+      "C_vphpl": 1359.7055217254951,
+      "vf_mph": 67.92813036719309,
+      "L_mi": 0.1541,
+      "kj": 220.0,
+      "slope_max": 6.186566269230052,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I10_W",
+      "period": "PM",
+      "N_train": 3,
+      "N_source": 30,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I10_W::L10W-084",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5464997413178933,
+      "x_support_max_h": 7.221374829402467,
+      "x_empirical_median_h": 3.0601137442496182,
+      "fd": 1.0471059671714955,
+      "n": 1.017484835632129,
+      "fp": 0.570513881260172,
+      "s": 0.4004929861594133,
+      "theta": 0.7556973297196432,
+      "C_vphpl": 1359.7055217254951,
+      "vf_mph": 67.92813036719309,
+      "L_mi": 0.1541,
+      "kj": 220.0,
+      "slope_max": 6.186566269230052,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I10_W",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 30,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I10_W::L10W-084",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5464997413178933,
+      "x_support_max_h": 7.221374829402467,
+      "x_empirical_median_h": 3.0601137442496182,
+      "fd": 1.0471059671714955,
+      "n": 1.017484835632129,
+      "fp": 0.570513881260172,
+      "s": 0.4004929861594133,
+      "theta": 0.7556973297196432,
+      "C_vphpl": 1359.7055217254951,
+      "vf_mph": 67.92813036719309,
+      "L_mi": 0.1541,
+      "kj": 220.0,
+      "slope_max": 6.186566269230052,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I210_E",
+      "period": "AM",
+      "N_train": 4,
+      "N_source": 20,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I210_E::L210E-245",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.7120711900425016,
+      "x_support_max_h": 6.955811639634703,
+      "x_empirical_median_h": 5.00578450825784,
+      "fd": 1.0870095154357462,
+      "n": 1.0125005024368583,
+      "fp": 0.498084344462563,
+      "s": 0.6092129135159142,
+      "theta": 0.7212380421318988,
+      "C_vphpl": 1400.519539509389,
+      "vf_mph": 69.18443357411284,
+      "L_mi": 0.2989,
+      "kj": 220.0,
+      "slope_max": 5.1745801159364735,
+      "admitted_intervals": [
+        [
+          0.7120712612496207,
+          3.4816695022617266
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I210_E",
+      "period": "MD",
+      "N_train": 8,
+      "N_source": 8,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D7_I210_E::L210E-237",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 2.4764848536208617,
+      "x_support_max_h": 6.955811639634703,
+      "x_empirical_median_h": 5.126435934559256,
+      "fd": 1.2050928023458418,
+      "n": 0.9315153760202036,
+      "fp": 0.1879437857622811,
+      "s": 1.025540565984698,
+      "theta": 0.73768409081611,
+      "C_vphpl": 1437.427578326397,
+      "vf_mph": 66.73256411910097,
+      "L_mi": 0.4816,
+      "kj": 220.0,
+      "slope_max": 5.624394594374182,
+      "admitted_intervals": [
+        [
+          2.4764851012693474,
+          4.3205694563680455
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I210_E",
+      "period": "PM",
+      "N_train": 8,
+      "N_source": 8,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D7_I210_E::L210E-245",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 4.365760819500726,
+      "x_support_max_h": 6.344698214791453,
+      "x_empirical_median_h": 5.546054726745283,
+      "fd": 0.98239491031959,
+      "n": 1.087651227810984,
+      "fp": 0.00684891142952,
+      "s": 3.0871132773869587,
+      "theta": 0.6416577808454678,
+      "C_vphpl": 1400.519539509389,
+      "vf_mph": 69.18443357411284,
+      "L_mi": 0.2989,
+      "kj": 220.0,
+      "slope_max": 3.2546128898920847,
+      "admitted_intervals": [
+        [
+          4.365761256076808,
+          4.97985879982596
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I210_E",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 20,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I210_E::L210E-245",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.7120711900425016,
+      "x_support_max_h": 6.955811639634703,
+      "x_empirical_median_h": 5.00578450825784,
+      "fd": 1.0870095154357462,
+      "n": 1.0125005024368583,
+      "fp": 0.498084344462563,
+      "s": 0.6092129135159142,
+      "theta": 0.7212380421318988,
+      "C_vphpl": 1400.519539509389,
+      "vf_mph": 69.18443357411284,
+      "L_mi": 0.2989,
+      "kj": 220.0,
+      "slope_max": 5.1745801159364735,
+      "admitted_intervals": [
+        [
+          0.7120712612496207,
+          3.4816695022617266
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I210_W",
+      "period": "AM",
+      "N_train": 22,
+      "N_source": 22,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D7_I210_W::L210W-301",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.8906470615160893,
+      "x_support_max_h": 5.940498467987643,
+      "x_empirical_median_h": 4.712319777738765,
+      "fd": 1.135069666363396,
+      "n": 0.985918407638151,
+      "fp": 0.6309753587002819,
+      "s": 0.771464174786203,
+      "theta": 0.5274075565658645,
+      "C_vphpl": 1327.7630584053009,
+      "vf_mph": 66.3842287062521,
+      "L_mi": 0.1342,
+      "kj": 220.0,
+      "slope_max": 3.097958007730195,
+      "admitted_intervals": [
+        [
+          0.8906471505807955,
+          2.35748578570884
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I210_W",
+      "period": "MD",
+      "N_train": 0,
+      "N_source": 33,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I210_W::L210W-301",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.6588584315487581,
+      "x_support_max_h": 5.940498467987643,
+      "x_empirical_median_h": 4.010356118605395,
+      "fd": 1.065208563094172,
+      "n": 1.017976211358848,
+      "fp": 0.5575744731385895,
+      "s": 0.8170581441761328,
+      "theta": 0.608950738847266,
+      "C_vphpl": 1327.7630584053009,
+      "vf_mph": 66.3842287062521,
+      "L_mi": 0.1342,
+      "kj": 220.0,
+      "slope_max": 3.0343976355621427,
+      "admitted_intervals": [
+        [
+          0.6588584974346013,
+          1.4373692213242746
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I210_W",
+      "period": "PM",
+      "N_train": 11,
+      "N_source": 11,
+      "calibration_scope": "corridor_period",
+      "reference_sensor_uid": "PeMS::D7_I210_W::L210W-301",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.6588584315487581,
+      "x_support_max_h": 5.377355235201476,
+      "x_empirical_median_h": 2.6495580143366486,
+      "fd": 1.0390021491339378,
+      "n": 1.003480148216952,
+      "fp": 0.4909133222521189,
+      "s": 0.3922538262169067,
+      "theta": 0.8161548147919869,
+      "C_vphpl": 1327.7630584053009,
+      "vf_mph": 66.3842287062521,
+      "L_mi": 0.1342,
+      "kj": 220.0,
+      "slope_max": 8.878718405037828,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I210_W",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 33,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I210_W::L210W-301",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.6588584315487581,
+      "x_support_max_h": 5.940498467987643,
+      "x_empirical_median_h": 4.010356118605395,
+      "fd": 1.065208563094172,
+      "n": 1.017976211358848,
+      "fp": 0.5575744731385895,
+      "s": 0.8170581441761328,
+      "theta": 0.608950738847266,
+      "C_vphpl": 1327.7630584053009,
+      "vf_mph": 66.3842287062521,
+      "L_mi": 0.1342,
+      "kj": 220.0,
+      "slope_max": 3.0343976355621427,
+      "admitted_intervals": [
+        [
+          0.6588584974346013,
+          1.4373692213242746
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I405_N",
+      "period": "AM",
+      "N_train": 6,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_N::L405N-115",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5525206873470863,
+      "x_support_max_h": 12.47038304128513,
+      "x_empirical_median_h": 4.570712067223893,
+      "fd": 1.0406362711123256,
+      "n": 1.046261768797571,
+      "fp": 0.6423927798647298,
+      "s": 0.6520950144204359,
+      "theta": 0.6113885541347807,
+      "C_vphpl": 1365.0352844325575,
+      "vf_mph": 68.30466277344011,
+      "L_mi": 0.5021,
+      "kj": 220.0,
+      "slope_max": 3.042247855284893,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I405_N",
+      "period": "MD",
+      "N_train": 2,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_N::L405N-115",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5525206873470863,
+      "x_support_max_h": 12.47038304128513,
+      "x_empirical_median_h": 4.570712067223893,
+      "fd": 1.0406362711123256,
+      "n": 1.046261768797571,
+      "fp": 0.6423927798647298,
+      "s": 0.6520950144204359,
+      "theta": 0.6113885541347807,
+      "C_vphpl": 1365.0352844325575,
+      "vf_mph": 68.30466277344011,
+      "L_mi": 0.5021,
+      "kj": 220.0,
+      "slope_max": 3.042247855284893,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I405_N",
+      "period": "PM",
+      "N_train": 7,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_N::L405N-115",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5525206873470863,
+      "x_support_max_h": 12.47038304128513,
+      "x_empirical_median_h": 4.570712067223893,
+      "fd": 1.0406362711123256,
+      "n": 1.046261768797571,
+      "fp": 0.6423927798647298,
+      "s": 0.6520950144204359,
+      "theta": 0.6113885541347807,
+      "C_vphpl": 1365.0352844325575,
+      "vf_mph": 68.30466277344011,
+      "L_mi": 0.5021,
+      "kj": 220.0,
+      "slope_max": 3.042247855284893,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I405_N",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 15,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_N::L405N-115",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 0.5525206873470863,
+      "x_support_max_h": 12.47038304128513,
+      "x_empirical_median_h": 4.570712067223893,
+      "fd": 1.0406362711123256,
+      "n": 1.046261768797571,
+      "fp": 0.6423927798647298,
+      "s": 0.6520950144204359,
+      "theta": 0.6113885541347807,
+      "C_vphpl": 1365.0352844325575,
+      "vf_mph": 68.30466277344011,
+      "L_mi": 0.5021,
+      "kj": 220.0,
+      "slope_max": 3.042247855284893,
+      "admitted_intervals": []
+    },
+    {
+      "corridor": "D7_I405_S",
+      "period": "AM",
+      "N_train": 3,
+      "N_source": 11,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_S::L405S-087",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 1.1059571674441326,
+      "x_support_max_h": 7.441206615098297,
+      "x_empirical_median_h": 4.554588285193421,
+      "fd": 1.042038734145725,
+      "n": 1.0606067942740236,
+      "fp": 0.5737011351294166,
+      "s": 0.5014416410781618,
+      "theta": 0.7352596129135058,
+      "C_vphpl": 1390.6566140712982,
+      "vf_mph": 69.4853321127462,
+      "L_mi": 0.5872,
+      "kj": 220.0,
+      "slope_max": 5.554570808067051,
+      "admitted_intervals": [
+        [
+          1.4098033347909769,
+          7.441205870977636
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I405_S",
+      "period": "MD",
+      "N_train": 1,
+      "N_source": 11,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_S::L405S-087",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 1.1059571674441326,
+      "x_support_max_h": 7.441206615098297,
+      "x_empirical_median_h": 4.554588285193421,
+      "fd": 1.042038734145725,
+      "n": 1.0606067942740236,
+      "fp": 0.5737011351294166,
+      "s": 0.5014416410781618,
+      "theta": 0.7352596129135058,
+      "C_vphpl": 1390.6566140712982,
+      "vf_mph": 69.4853321127462,
+      "L_mi": 0.5872,
+      "kj": 220.0,
+      "slope_max": 5.554570808067051,
+      "admitted_intervals": [
+        [
+          1.4098033347909769,
+          7.441205870977636
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I405_S",
+      "period": "PM",
+      "N_train": 7,
+      "N_source": 11,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_S::L405S-087",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 1.1059571674441326,
+      "x_support_max_h": 7.441206615098297,
+      "x_empirical_median_h": 4.554588285193421,
+      "fd": 1.042038734145725,
+      "n": 1.0606067942740236,
+      "fp": 0.5737011351294166,
+      "s": 0.5014416410781618,
+      "theta": 0.7352596129135058,
+      "C_vphpl": 1390.6566140712982,
+      "vf_mph": 69.4853321127462,
+      "L_mi": 0.5872,
+      "kj": 220.0,
+      "slope_max": 5.554570808067051,
+      "admitted_intervals": [
+        [
+          1.4098033347909769,
+          7.441205870977636
+        ]
+      ]
+    },
+    {
+      "corridor": "D7_I405_S",
+      "period": "NT",
+      "N_train": 0,
+      "N_source": 11,
+      "calibration_scope": "corridor_all_periods",
+      "reference_sensor_uid": "PeMS::D7_I405_S::L405S-087",
+      "reference_selection": "nearest median capacity among participating cubic-supported detectors",
+      "x_support_min_h": 1.1059571674441326,
+      "x_support_max_h": 7.441206615098297,
+      "x_empirical_median_h": 4.554588285193421,
+      "fd": 1.042038734145725,
+      "n": 1.0606067942740236,
+      "fp": 0.5737011351294166,
+      "s": 0.5014416410781618,
+      "theta": 0.7352596129135058,
+      "C_vphpl": 1390.6566140712982,
+      "vf_mph": 69.4853321127462,
+      "L_mi": 0.5872,
+      "kj": 220.0,
+      "slope_max": 5.554570808067051,
+      "admitted_intervals": [
+        [
+          1.4098033347909769,
+          7.441205870977636
+        ]
+      ]
+    }
+  ],
+  "cubic_coefficients": {
+    "CO2": [
+      8801.633440397325,
+      -281.9437306321036,
+      9.963472283997316,
+      -0.0513217787684905
+    ],
+    "NOx": [
+      7.422341517734551,
+      -0.5071325265593435,
+      0.0180432900804668,
+      -8.947978376299922e-05
+    ],
+    "CO": [
+      58.178423969901566,
+      0.0649232268665192,
+      0.0201763825647442,
+      -9.439572458426686e-05
+    ],
+    "HC": [
+      2.941868430060413,
+      -0.0407633863391412,
+      0.0019420510837799,
+      -1.2368607529741969e-05
+    ]
+  }
+}

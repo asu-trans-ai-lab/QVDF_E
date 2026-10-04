@@ -1,0 +1,5 @@
+corridor,period,calibration_scope,N_source,theta_mu_bar,estimator
+AZ_I10_W,AM,corridor_period,65,0.8857572341225102,"median(x_h/P_h), original eligible training cohort"
+AZ_I10_W,MD,corridor_period,182,0.7509622548088537,"median(x_h/P_h), original eligible training cohort"
+AZ_I10_W,PM,corridor_period,663,0.6935407750476196,"median(x_h/P_h), original eligible training cohort"
+AZ_I10_W,NT,corridor_period,14,0.6186197678369867,"median(x_h/P_h), original eligible training cohort"

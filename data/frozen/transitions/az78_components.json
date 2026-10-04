@@ -1,0 +1,78 @@
+{
+ "rate_file": "cubic_rate_coefficients_transitions.csv",
+ "sha256": "c8b0802937793c93c832c63da3894ab91b13d4777a9ce86a275cad94d5fdc089",
+ "rate_units": "g/(veh h), speed in mph, cubic fit on 5-75 mph",
+ "detector": "AZ I-10 W 78",
+ "C_vphpl": 1501.62,
+ "vf_mph": 64.16,
+ "L_mi": 1.04,
+ "kj": 220.0,
+ "x_h": 1.574,
+ "P_h": 2.014418875715952,
+ "mu_vphpl": 1173.315991273147,
+ "vq_mph": 17.673974619128394,
+ "wbar_min": 0.8355310470413163,
+ "wt2_min": 1.824303596160079,
+ "a_down": 1.5,
+ "a_up": 1.0,
+ "T_down_s": 20.78111278626484,
+ "T_up_s": 31.17166917939726,
+ "window_min": [
+  0.3136791278396011,
+  1.4193295693625876
+ ],
+ "components": {
+  "CO2": {
+   "e0": 294.55798059760036,
+   "Gamma_g_per_veh_h": 2265.9207381113406,
+   "delay_increment": 31.55411878044668,
+   "two_speed_total": 326.11209937804705,
+   "ks1_correction": -14.689685473117196,
+   "corrected_total": 311.42241390492984,
+   "ks1_pct_of_two_speed_total": -4.504489560839049,
+   "ks1_pct_of_delay_increment": -46.55393983691295,
+   "r2_rate_fit": 0.9590390732843213,
+   "power_fit_increment": 30.172396799162534,
+   "power_minus_cubic_increment_pct_of_two_speed_total": -0.4236954053282078
+  },
+  "NOx": {
+   "e0": 0.4137804404091901,
+   "Gamma_g_per_veh_h": -4.734644786361404,
+   "delay_increment": -0.06593237859528756,
+   "two_speed_total": 0.34784806181390254,
+   "ks1_correction": -0.02830565925489942,
+   "corrected_total": 0.3195424025590031,
+   "ks1_pct_of_two_speed_total": -8.13736293578742,
+   "ks1_pct_of_delay_increment": 42.93134853915696,
+   "r2_rate_fit": 0.9578170709462462,
+   "power_fit_increment": -0.06521716986830742,
+   "power_minus_cubic_increment_pct_of_two_speed_total": 0.20560951906719888
+  },
+  "CO": {
+   "e0": 1.9527355645357272,
+   "Gamma_g_per_veh_h": 44.05877416015223,
+   "delay_increment": 0.6135412284231481,
+   "two_speed_total": 2.5662767929588752,
+   "ks1_correction": -0.03443889116944926,
+   "corrected_total": 2.531837901789426,
+   "ks1_pct_of_two_speed_total": -1.3419788256644671,
+   "ks1_pct_of_delay_increment": -5.613133979269832,
+   "r2_rate_fit": 0.8329286901597048,
+   "power_fit_increment": 0.6124597089926709,
+   "power_minus_cubic_increment_pct_of_two_speed_total": -0.04214352222038412
+  },
+  "HC": {
+   "e0": 0.08192624241915078,
+   "Gamma_g_per_veh_h": 1.8874210445467214,
+   "delay_increment": 0.026283314692632283,
+   "two_speed_total": 0.10820955711178307,
+   "ks1_correction": -0.0016992175615363424,
+   "corrected_total": 0.10651033955024672,
+   "ks1_pct_of_two_speed_total": -1.570302667241314,
+   "ks1_pct_of_delay_increment": -6.465004819246279,
+   "r2_rate_fit": 0.9434714764250438,
+   "power_fit_increment": 0.026222741818420044,
+   "power_minus_cubic_increment_pct_of_two_speed_total": -0.05597737928976632
+  }
+ }
+}

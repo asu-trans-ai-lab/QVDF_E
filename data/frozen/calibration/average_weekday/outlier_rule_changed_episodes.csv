@@ -1,0 +1,4 @@
+episode_id,corridor,period,date,holdout,qc_hard_fail,outlier_votes,legacy_raw_delay_outlier_votes,qc_outlier_fail,legacy_raw_delay_outlier_fail,calibration_eligible,P_h,wt2_h,Tf_h,wt2_normalized
+state_transition__PeMS::D7_I10_W::L10W-377__2025-10-01__236,D7_I10_W,AM,2025-10-01,False,True,1,2,False,True,False,2.9166666666666665,8.775795773233131e-05,0.00010259277501919179,0.8554009550469284
+state_transition__PeMS::D7_I210_W::L210W-305__2025-10-01__294,D7_I210_W,PM,2025-10-01,False,False,1,2,False,True,True,0.6666666666666666,0.003529248264140851,0.007761290702645379,0.45472440079301923
+state_transition__PeMS::D7_I405_S::L405S-417__2025-10-01__323,D7_I405_S,AM,2025-10-01,False,True,1,2,False,True,False,7.25,0.041142365177770895,0.01557990117118329,2.640733386285411

@@ -1,0 +1,61 @@
+{
+ "cubic_co2_c0_c3": [
+  8797.141841697055,
+  -281.11327856162166,
+  9.919659359130193,
+  -0.05085085579928092
+ ],
+ "r2_at_40p9": 7.360518705116849,
+ "delta_e_tr_detector78_g": -14.762935177610572,
+ "n_transitions": 282,
+ "n_entry": 170,
+ "n_exit": 112,
+ "n_by_kind_level": {
+  "entry_19kmh": 80,
+  "entry_28kmh": 90,
+  "exit_19kmh": 45,
+  "exit_28kmh": 67
+ },
+ "T_median_s": 10.4,
+ "r2_ks1_median": 0.7911987611655219,
+ "time_share_v1_median": 0.49904070664961375,
+ "time_share_v1_iqr": [
+  0.4169102049075976,
+  0.5791488561944254
+ ],
+ "dx_res_abs_rel_median": 0.04758209182798091,
+ "n_emission": 281,
+ "corr_de": 0.9232424816462428,
+ "de_obs_median_g": -0.5233386351436664,
+ "de_ks1_median_g": -0.4658604786221373,
+ "ratio_median": 1.1884651661996195,
+ "err_two_speed_median_pct": 2.478543908167166,
+ "err_ks1_corrected_median_pct": 0.38318732606270905,
+ "err_two_speed_mean_abs_pct": 3.1369482066051297,
+ "err_ks1_corrected_mean_abs_pct": 0.6066316443399131,
+ "n_excursion": 146,
+ "share_excursion": 0.5177304964539007,
+ "share_excursion_by_kind": {
+  "entry": 0.3764705882352941,
+  "exit": 0.7321428571428571
+ },
+ "excursion_median_ms": 2.7701958701100193,
+ "excursion_median_mph": 6.196751677948326,
+ "n_excursion_emission": 85,
+ "excursion_term_median_g": 0.903380577209365,
+ "share_excursion_term_positive": 0.8823529411764706,
+ "de_obs_full_median_excursion_g": 0.21738045208297052,
+ "share_de_obs_full_positive_excursion": 0.5764705882352941,
+ "r2_ks2_full_median_excursion": 0.871362065204052,
+ "share_vJ_outside_excursion": 0.863013698630137,
+ "reference_exact_ks1_plus_fluctuation": {
+  "n": 846,
+  "r2_ks1_median": 0.8276092955661047,
+  "time_share_v1_median": 0.5055524265640171,
+  "dx_res_abs_rel_median": 0.05470525371734347,
+  "corr_de": 0.9543267403546472,
+  "ratio_median": 1.0673495236616906,
+  "err_two_speed_median_pct": 2.246814760061283,
+  "err_ks1_corrected_median_pct": 0.14332969656060013
+ }
+}
